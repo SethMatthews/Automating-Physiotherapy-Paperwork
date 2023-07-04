@@ -11,8 +11,8 @@ export default {
   stacks(app) {
     app.stack(function Site({ stack }) {
       const site = new NextjsSite(stack, "site", {
+        customDomain: "trackmyhotel.com",
         environment : {
-          customDomain: "trackmyhotel.com",
           DATABASE_URL: process.env.DATABASE_URL!,
         }
       });
