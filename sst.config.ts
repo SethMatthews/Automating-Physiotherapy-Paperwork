@@ -12,12 +12,14 @@ export default {
     app.stack(function Site({ stack }) {
       const site = new NextjsSite(stack, "site", {
         environment : {
+          customDomain: "trackmyhotel.com",
           DATABASE_URL: process.env.DATABASE_URL!,
         }
       });
 
       stack.addOutputs({
-        SiteUrl: site.url,
+        // SiteUrl: site.url,
+        Url: site.customDomainUrl || site.url,
       });
     });
   },
