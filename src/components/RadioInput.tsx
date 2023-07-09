@@ -1,8 +1,8 @@
-const RadioInputOption = ({text, value,questionName}) => {
+const RadioInputOption = ({text, value,questionName}:{text: string, value: string,questionName: string}) => {
     return (  
             <div>
                 <input type="radio" id={value} name={questionName} value={value}/>
-                <label for={value}>{text}</label>
+                <label htmlFor={value}>{text}</label>
                 <br/>
             </div>
     );

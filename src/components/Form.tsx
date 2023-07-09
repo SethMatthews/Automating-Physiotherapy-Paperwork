@@ -4,7 +4,7 @@ import RadioInputOption from "./RadioInput";
 
 // handleChange(e.target.value);
 
-const Form = ({handleChange}) => {
+const Form = ({handleChange}:{handleChange: Function}) => {
     return (  
         <div>
             <form onChange={(e)=> {
