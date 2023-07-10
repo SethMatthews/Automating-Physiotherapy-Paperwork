@@ -17,7 +17,52 @@ import Form from '../components/Form';
             // {question:"",values:[]},
     // );
 
+
+
 export default function Home() {
+
+  interface Input {
+    questionName: string;
+    values: string[];
+  }
+
+  const input: Input = {
+    questionName: "Any associated pins and needles or numbness?",
+    values: ["Toes"],
+  };
+
+  const input2: Input = {
+    questionName: "Any associated pins and needles or numbness?",
+    values: ["Posterior glute"],
+  };
+
+  const isQuestionInObjectArray = (question: string, objectArray: Input[]): boolean => {
+    let isPresent = false;
+    objectArray.map((object)=>{
+      if (object.questionName === question){
+        console.log("it is true");
+        isPresent = true;
+      }
+    });
+    return isPresent;
+  }
+
+
+  const objectResult: Input[] = [input, input2];
+  console.log(objectResult);
+  console.log(`isQuestionInObjectArray("Any associated pins and needles or numbness?") == }`)
+  console.log(isQuestionInObjectArray("Any associated pins and needles or numbness?",objectResult));
+
+
+
+
+
+   // const [objectResult,setObjectResult] = useState<Input[]>([input,input2]);
+
+
+
+
+
   const [results,setResults] = useState<string[]>([]);
 
   // 
