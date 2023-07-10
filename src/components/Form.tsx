@@ -4,13 +4,18 @@ import RadioInputOption from "./RadioInput";
 
 // handleChange(e.target.value);
 
-const Form = ({handleChange}:{handleChange: Function}) => {
+interface formProps {
+    // handleChange: (changeEvent: React.ChangeEvent<HTMLInputElement>|React.FormEvent<HTMLFormElement>)=>void;
+    handleChange: (changeEvent: React.SyntheticEvent)=>void;
+}
+
+const Form = ({handleChange}:formProps) => {
     return (  
         <div>
             <form onChange={(e)=> {
                 console.log(e);
                 // console.log(e.target.name);
-                handleChange(e.target);
+                handleChange(e);
                 }}>
                 <p>How long have been experiencing pain?</p>
                 <RadioInputOption text="days" value="days" questionName="How long have been experiencing pain?"/>
