@@ -68,6 +68,19 @@ export default function Home() {
   console.log(addNewValue( "Any associated pins and needles or numbness?","Posterior glute",objectResult));
   console.log(addNewValue( "Any associated pins and needles or numbness?","Testing add value funtion",objectResult));
 
+  //Create a funtion to add value for a questiosn that isn't present 
+  const addNewObject = (questionNameToAdd: string, valueToAdd: string, objectArray: Input[]) =>{
+    const newObject: Input = {
+      questionName: questionNameToAdd,
+      values: [valueToAdd],
+    };
+    objectArray.push(newObject);
+    return objectArray;
+  }
+
+  console.log(addNewObject( "Is the radiating pain constant or intermittent?","Testing add value funtion",objectResult));
+  console.log(addNewObject( "Question three ?","Testing add value funtion",objectResult));
+  //Create funtion which removes a value from a question
 
 
 
