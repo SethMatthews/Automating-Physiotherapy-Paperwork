@@ -21,66 +21,62 @@ import Form from '../components/Form';
 
 export default function Home() {
 
-  interface Input {
-    questionName: string;
-    values: string[];
+  const resultsToDisplay: { [questionName: string]: string[]} = {};
+
+  resultsToDisplay[ "Any associated pins and needles or numbness?"] = ["Toes"];
+
+  console.log(resultsToDisplay);
+
+
+
+  const isQuestionInObject = (questionName: string, resultsToDisplay:{[questionName: string]: string[]}):boolean=> {
+    return resultsToDisplay[questionName]!==undefined;
   }
 
-  const input: Input = {
-    questionName: "Any associated pins and needles or numbness?",
-    values: ["Toes"],
-  };
+  console.log(isQuestionInObject("Any associated pins and needles or numbness?",resultsToDisplay));
+
+  // const addNewValue = (questionName: string, value: string, objectArray: Input[]) =>{
+  //   objectArray.map((object)=>{
+  //     if (object.questionName === questionName){
+  //       const oldValues: string[] = object.values;
+  //       oldValues.push(value);
+  //       return oldValues;
+  //     }
+  //   });
+  // }
 
 
-  // const input2: Input = {
-  //   questionName: "Any associated pins and needles or numbness?",
-  //   values: ["Posterior glute"],
-  // };
+  // const objectResult: Input[] = [input];
+  // console.log("objectResult");
+  // console.log(objectResult);
+  // console.log(`isQuestionInObjectArray("Any associated pins and needles or numbness?") == }`)
+  // console.log(isQuestionInObjectArray("Any associated pins and needles or numbness?",objectResult));
+  // console.log("addNewValue");
+  // console.log(addNewValue( "Any associated pins and needles or numbness?","Posterior glute",objectResult));
+  // console.log(addNewValue( "Any associated pins and needles or numbness?","Testing add value funtion",objectResult));
 
-  const isQuestionInObjectArray = (questionName: string, objectArray: Input[]): boolean => {
-    let isPresent = false;
-    objectArray.map((object)=>{
-      if (object.questionName === questionName){
-        console.log("it is true");
-        isPresent = true;
-      }
-    });
-    return isPresent;
-  }
+  // //Create a funtion to add value for a questiosn that isn't present 
+  // const addNewObject = (questionNameToAdd: string, valueToAdd: string, objectArray: Input[]) =>{
+  //   const newObject: Input = {
+  //     questionName: questionNameToAdd,
+  //     values: [valueToAdd],
+  //   };
+  //   objectArray.push(newObject);
+  //   return objectArray;
+  // }
 
-  const addNewValue = (questionName: string, value: string, objectArray: Input[]) =>{
-    objectArray.map((object)=>{
-      if (object.questionName === questionName){
-        const oldValues: string[] = object.values;
-        oldValues.push(value);
-        return oldValues;
-      }
-    });
-  }
-
-
-  const objectResult: Input[] = [input];
-  console.log("objectResult");
-  console.log(objectResult);
-  console.log(`isQuestionInObjectArray("Any associated pins and needles or numbness?") == }`)
-  console.log(isQuestionInObjectArray("Any associated pins and needles or numbness?",objectResult));
-  console.log("addNewValue");
-  console.log(addNewValue( "Any associated pins and needles or numbness?","Posterior glute",objectResult));
-  console.log(addNewValue( "Any associated pins and needles or numbness?","Testing add value funtion",objectResult));
-
-  //Create a funtion to add value for a questiosn that isn't present 
-  const addNewObject = (questionNameToAdd: string, valueToAdd: string, objectArray: Input[]) =>{
-    const newObject: Input = {
-      questionName: questionNameToAdd,
-      values: [valueToAdd],
-    };
-    objectArray.push(newObject);
-    return objectArray;
-  }
-
-  console.log(addNewObject( "Is the radiating pain constant or intermittent?","Testing add value funtion",objectResult));
-  console.log(addNewObject( "Question three ?","Testing add value funtion",objectResult));
+  // console.log(addNewObject( "Is the radiating pain constant or intermittent?","Testing add value funtion",objectResult));
+  // console.log(addNewObject( "Question three ?","Testing add value funtion",objectResult));
+  // console.log(objectResult);
+  
+  
   //Create funtion which removes a value from a question
+
+  // const removeValueFromObject = (questionNameToAdd: string, valueToRemove: string, objectArray: Input[]) =>{
+
+  //   const newObject: Input[] = objectArray;
+  // }
+
 
 
 
