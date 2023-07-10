@@ -31,15 +31,16 @@ export default function Home() {
     values: ["Toes"],
   };
 
-  const input2: Input = {
-    questionName: "Any associated pins and needles or numbness?",
-    values: ["Posterior glute"],
-  };
 
-  const isQuestionInObjectArray = (question: string, objectArray: Input[]): boolean => {
+  // const input2: Input = {
+  //   questionName: "Any associated pins and needles or numbness?",
+  //   values: ["Posterior glute"],
+  // };
+
+  const isQuestionInObjectArray = (questionName: string, objectArray: Input[]): boolean => {
     let isPresent = false;
     objectArray.map((object)=>{
-      if (object.questionName === question){
+      if (object.questionName === questionName){
         console.log("it is true");
         isPresent = true;
       }
@@ -47,11 +48,26 @@ export default function Home() {
     return isPresent;
   }
 
+  const addNewValue = (questionName: string, value: string, objectArray: Input[]) =>{
+    objectArray.map((object)=>{
+      if (object.questionName === questionName){
+        const oldValues: string[] = object.values;
+        oldValues.push(value);
+        return oldValues;
+      }
+    });
+  }
 
-  const objectResult: Input[] = [input, input2];
+
+  const objectResult: Input[] = [input];
+  console.log("objectResult");
   console.log(objectResult);
   console.log(`isQuestionInObjectArray("Any associated pins and needles or numbness?") == }`)
   console.log(isQuestionInObjectArray("Any associated pins and needles or numbness?",objectResult));
+  console.log("addNewValue");
+  console.log(addNewValue( "Any associated pins and needles or numbness?","Posterior glute",objectResult));
+  console.log(addNewValue( "Any associated pins and needles or numbness?","Testing add value funtion",objectResult));
+
 
 
 
