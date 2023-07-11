@@ -91,7 +91,6 @@ export default function Home() {
   //addNewRadioValue functions 
 
   const addNewRadioValue = (questionName: string, value: string, resultsToDisplay:{[questionName: string]: string[]}) =>{
-    
     if(typeof resultsToDisplay === "undefined"){
       throw new Error('resultsToDisplay is undefined');
     }
@@ -105,42 +104,29 @@ export default function Home() {
 
   const [results,setResults] = useState<string[]>([]);
 
-  // 
   const handleChange = (changeEvent: React.SyntheticEvent) => {
-    // formName = target.name
+    const target = changeEvent.target as HTMLInputElement;
 
-    const target = changeEvent.target as HTMLInputElement ;
-    // const target = changeEvent;
-
-    // console.log(`handle change for ${target}`);
     if (target.type === 'radio') {
         console.log("radio fired");
-        console.log(target);
+        resultsToDisplay = addNewRadioValue(target.name.toString(), target.value.toString(), resultsToDisplay);
+        console.log(resultsToDisplay);
+
     }
     if (target.type === 'checkbox') {
         console.log("checkbox fired");
         if (target.checked){
             console.log("Checked")
             const updatedArray: string[] = results;
-            updatedArray.push(target.value.toString());
-            // console.log(`upadted array == ${updatedArray}`)
-            
+            updatedArray.push(target.value.toString());            
             const sliceArray: string[] = updatedArray.slice();
             setResults(sliceArray);
-            // console.log(`results are == ${results}`);
         }
         if (!target.checked){
-            // console.log("NOT Checked") ;
             const filteredArray = results.filter(item=>{
-                // console.log(`itwm is ${typeof item}`);
-                // console.log(`target.value.toString() is ${ typeof target.value.toString()}`);
-                // console.log(`Are these two equal? ${ item !== target.value}`);
                 return item !== target.value.toString();
-                // Not working 
             });
-            // console.log(`Updated array is ${filteredArray}`);
             setResults(filteredArray);
-            // console.log(`Results is now == ${filteredArray}`);
             console.log(results);
         }
     }
