@@ -49,15 +49,21 @@ export default function Home() {
     return newResultsToDisplay;
   }
 
-  resultsToDisplay = addNewCheckboxValue( "Any associated pins and needles or numbness?", "value 2", resultsToDisplay);
+  resultsToDisplay = addNewCheckboxValue( "Any associated pins and needles or numbness?", "value to remove", resultsToDisplay);
+  console.log(addNewCheckboxValue( "Any associated pins and needles or numbness?", "value to remove", resultsToDisplay));
+  console.log("Above here");
   resultsToDisplay = addNewCheckboxValue( "Any associated pins and needles or numbness?", "value 3", resultsToDisplay);
   console.log(resultsToDisplay);
 
   //add new question with intial value 
 
   const addNewQuestion = (questionName: string, initialValue: string, resultsToDisplay:{[questionName: string]: string[]}) =>{
-    resultsToDisplay[questionName]=[initialValue];
-    return resultsToDisplay;
+    if(typeof resultsToDisplay === "undefined"){
+      throw new Error('resultsToDisplay is undefined');
+    }
+    const newResultsToDisplay = resultsToDisplay;
+    newResultsToDisplay[questionName]=[initialValue];
+    return newResultsToDisplay;
   }
 
   resultsToDisplay = addNewQuestion( "question for new question??", "test1 value", resultsToDisplay);
@@ -66,40 +72,34 @@ export default function Home() {
 
   //removeCheckboxValue function 
 
+  const removeCheckboxValue = (questionName: string, valueToRemove: string, resultsToDisplay:{[questionName: string]: string[]}) =>{
+
+    if(typeof resultsToDisplay === "undefined"){
+      throw new Error('resultsToDisplay is undefined');
+    }
+    const newResultsToDisplay = resultsToDisplay;
+    
+    const oldValues: string[] = newResultsToDisplay[questionName] as string[];
+    const newValues: string[] = oldValues.filter((value)=>value!==valueToRemove);
+    newResultsToDisplay[questionName] = newValues;
+    return newResultsToDisplay;
+  }
+
+  console.log(removeCheckboxValue("Any associated pins and needles or numbness?","value to remove",resultsToDisplay));
+  console.log(removeCheckboxValue("Any associated pins and needles or numbness?","Toes",resultsToDisplay));
+
   //addNewRadioValue functions 
 
-
-
-  // //Create a funtion to add value for a questiosn that isn't present 
-  // const addNewObject = (questionNameToAdd: string, valueToAdd: string, objectArray: Input[]) =>{
-  //   const newObject: Input = {
-  //     questionName: questionNameToAdd,
-  //     values: [valueToAdd],
-  //   };
-  //   objectArray.push(newObject);
-  //   return objectArray;
-  // }
-
-  // console.log(addNewObject( "Is the radiating pain constant or intermittent?","Testing add value funtion",objectResult));
-  // console.log(addNewObject( "Question three ?","Testing add value funtion",objectResult));
-  // console.log(objectResult);
+  const addNewRadioValue = (questionName: string, value: string, resultsToDisplay:{[questionName: string]: string[]}) =>{
+    
+    if(typeof resultsToDisplay === "undefined"){
+      throw new Error('resultsToDisplay is undefined');
+    }
+    const newResultsToDisplay = resultsToDisplay;
+    newResultsToDisplay[questionName] = [value];
+    return newResultsToDisplay;
+  }
   
-  
-  //Create funtion which removes a value from a question
-
-  // const removeValueFromObject = (questionNameToAdd: string, valueToRemove: string, objectArray: Input[]) =>{
-
-  //   const newObject: Input[] = objectArray;
-  // }
-
-
-
-
-
-
-   // const [objectResult,setObjectResult] = useState<Input[]>([input,input2]);
-
-
 
 
 
