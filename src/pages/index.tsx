@@ -36,7 +36,7 @@ export default function Home() {
 
   console.log(isQuestionInObject("Any associated pins and needles or numbness?",resultsToDisplay));
 
-  const addNewValue = (questionName: string, value: string, resultsToDisplay:{[questionName: string]: string[]}) =>{
+  const addNewCheckboxValue = (questionName: string, value: string, resultsToDisplay:{[questionName: string]: string[]}) =>{
     
     if(typeof resultsToDisplay === "undefined"){
       throw new Error('resultsToDisplay is undefined');
@@ -49,29 +49,26 @@ export default function Home() {
     return newResultsToDisplay;
   }
 
-  resultsToDisplay = addNewValue( "Any associated pins and needles or numbness?", "value 2", resultsToDisplay);
-  resultsToDisplay = addNewValue( "Any associated pins and needles or numbness?", "value 3", resultsToDisplay);
+  resultsToDisplay = addNewCheckboxValue( "Any associated pins and needles or numbness?", "value 2", resultsToDisplay);
+  resultsToDisplay = addNewCheckboxValue( "Any associated pins and needles or numbness?", "value 3", resultsToDisplay);
   console.log(resultsToDisplay);
 
-  // const addNewValue = (questionName: string, value: string, objectArray: Input[]) =>{
-  //   objectArray.map((object)=>{
-  //     if (object.questionName === questionName){
-  //       const oldValues: string[] = object.values;
-  //       oldValues.push(value);
-  //       return oldValues;
-  //     }
-  //   });
-  // }
+  //add new question with intial value 
+
+  const addNewQuestion = (questionName: string, initialValue: string, resultsToDisplay:{[questionName: string]: string[]}) =>{
+    resultsToDisplay[questionName]=[initialValue];
+    return resultsToDisplay;
+  }
+
+  resultsToDisplay = addNewQuestion( "question for new question??", "test1 value", resultsToDisplay);
+  console.log(resultsToDisplay);
 
 
-  // const objectResult: Input[] = [input];
-  // console.log("objectResult");
-  // console.log(objectResult);
-  // console.log(`isQuestionInObjectArray("Any associated pins and needles or numbness?") == }`)
-  // console.log(isQuestionInObjectArray("Any associated pins and needles or numbness?",objectResult));
-  // console.log("addNewValue");
-  // console.log(addNewValue( "Any associated pins and needles or numbness?","Posterior glute",objectResult));
-  // console.log(addNewValue( "Any associated pins and needles or numbness?","Testing add value funtion",objectResult));
+  //removeCheckboxValue function 
+
+  //addNewRadioValue functions 
+
+
 
   // //Create a funtion to add value for a questiosn that isn't present 
   // const addNewObject = (questionNameToAdd: string, valueToAdd: string, objectArray: Input[]) =>{
