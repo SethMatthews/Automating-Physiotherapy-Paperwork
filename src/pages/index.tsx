@@ -21,9 +21,10 @@ import Form from '../components/Form';
 
 export default function Home() {
 
-  const resultsToDisplay: { [questionName: string]: string[]} = {};
+  let resultsToDisplay: { [questionName: string]: string[]} = {};
 
   resultsToDisplay[ "Any associated pins and needles or numbness?"] = ["Toes"];
+  resultsToDisplay[ "Question two?"] = ["morning"];
 
   console.log(resultsToDisplay);
 
@@ -34,6 +35,23 @@ export default function Home() {
   }
 
   console.log(isQuestionInObject("Any associated pins and needles or numbness?",resultsToDisplay));
+
+  const addNewValue = (questionName: string, value: string, resultsToDisplay:{[questionName: string]: string[]}) =>{
+    
+    if(typeof resultsToDisplay === "undefined"){
+      throw new Error('resultsToDisplay is undefined');
+    }
+    const newResultsToDisplay = resultsToDisplay;
+    const oldValues: string[] = newResultsToDisplay[questionName] as string[];
+    oldValues.push(value);
+    const newValues: string[] = oldValues;
+    newResultsToDisplay[questionName] = newValues;
+    return newResultsToDisplay;
+  }
+
+  resultsToDisplay = addNewValue( "Any associated pins and needles or numbness?", "value 2", resultsToDisplay);
+  resultsToDisplay = addNewValue( "Any associated pins and needles or numbness?", "value 3", resultsToDisplay);
+  console.log(resultsToDisplay);
 
   // const addNewValue = (questionName: string, value: string, objectArray: Input[]) =>{
   //   objectArray.map((object)=>{
