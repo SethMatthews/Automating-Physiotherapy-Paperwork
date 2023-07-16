@@ -5,77 +5,58 @@
 import { useState } from 'react';
 import Form from '../components/Form';
 
-// const [results,setResults] = useState(
-        // {
-        //     formName : {
-            //     questionName: ["string"],
-                // questionName: ["string","string"],
-        //     }
-        // }
-    //     {question:"",values:[]},
-            // {question:"",values:[]},
-            // {question:"",values:[]},
-    // );
 
 
 
 export default function Home() {
 
+  const [results,setResults] = useState<string[]>([]);
+
   let resultsToDisplay: { [questionName: string]: string[]} = {};
-
-  resultsToDisplay[ "Any associated pins and needles or numbness?"] = ["Toes"];
-  resultsToDisplay[ "Question two?"] = ["morning"];
-
-  console.log(resultsToDisplay);
 
 
 
   const isQuestionInObject = (questionName: string, resultsToDisplay:{[questionName: string]: string[]}):boolean=> {
-    return resultsToDisplay[questionName]!==undefined;
+    console.log(`Checking if ${questionName} is in the object `, resultsToDisplay);
+    console.log(`resultsToDisplay.hasOwnProperty(questionName) `, resultsToDisplay.hasOwnProperty(questionName));
+    return resultsToDisplay.hasOwnProperty(questionName);
   }
-
-  console.log(isQuestionInObject("Any associated pins and needles or numbness?",resultsToDisplay));
 
   const addNewCheckboxValue = (questionName: string, value: string, resultsToDisplay:{[questionName: string]: string[]}) =>{
     
-    if(typeof resultsToDisplay === "undefined"){
-      throw new Error('resultsToDisplay is undefined');
+    if(isQuestionInObject(questionName,resultsToDisplay )){
+      console.log("Question exist");
+      const newResultsToDisplay = resultsToDisplay;
+      const oldValues: string[] = newResultsToDisplay[questionName] as string[];
+      oldValues.push(value);
+      const newValues: string[] = oldValues.slice();
+      newResultsToDisplay[questionName] = newValues;
+      return newResultsToDisplay;
+    } else {
+      console.log("Question does NOT exist");
+      return addNewQuestion(questionName, value, resultsToDisplay);
     }
-    const newResultsToDisplay = resultsToDisplay;
-    const oldValues: string[] = newResultsToDisplay[questionName] as string[];
-    oldValues.push(value);
-    const newValues: string[] = oldValues;
-    newResultsToDisplay[questionName] = newValues;
-    return newResultsToDisplay;
+    
   }
-
-  resultsToDisplay = addNewCheckboxValue( "Any associated pins and needles or numbness?", "value to remove", resultsToDisplay);
-  console.log(addNewCheckboxValue( "Any associated pins and needles or numbness?", "value to remove", resultsToDisplay));
-  console.log("Above here");
-  resultsToDisplay = addNewCheckboxValue( "Any associated pins and needles or numbness?", "value 3", resultsToDisplay);
-  console.log(resultsToDisplay);
 
   //add new question with intial value 
 
   const addNewQuestion = (questionName: string, initialValue: string, resultsToDisplay:{[questionName: string]: string[]}) =>{
-    if(typeof resultsToDisplay === "undefined"){
-      throw new Error('resultsToDisplay is undefined');
-    }
+    // if(typeof resultsToDisplay === "undefined"){
+    //   throw new Error('resultsToDisplay is undefined');
+    // }
     const newResultsToDisplay = resultsToDisplay;
     newResultsToDisplay[questionName]=[initialValue];
     return newResultsToDisplay;
   }
-
-  resultsToDisplay = addNewQuestion( "question for new question??", "test1 value", resultsToDisplay);
-  console.log(resultsToDisplay);
 
 
   //removeCheckboxValue function 
 
   const removeCheckboxValue = (questionName: string, valueToRemove: string, resultsToDisplay:{[questionName: string]: string[]}) =>{
 
-    if(typeof resultsToDisplay === "undefined"){
-      throw new Error('resultsToDisplay is undefined');
+    if(isQuestionInObject(questionName,resultsToDisplay ) === false){
+      throw new Error('Question does no exist');
     }
     const newResultsToDisplay = resultsToDisplay;
     
@@ -85,15 +66,12 @@ export default function Home() {
     return newResultsToDisplay;
   }
 
-  console.log(removeCheckboxValue("Any associated pins and needles or numbness?","value to remove",resultsToDisplay));
-  console.log(removeCheckboxValue("Any associated pins and needles or numbness?","Toes",resultsToDisplay));
-
   //addNewRadioValue functions 
 
   const addNewRadioValue = (questionName: string, value: string, resultsToDisplay:{[questionName: string]: string[]}) =>{
-    if(typeof resultsToDisplay === "undefined"){
-      throw new Error('resultsToDisplay is undefined');
-    }
+    // if(typeof resultsToDisplay === "undefined"){
+    //   throw new Error('resultsToDisplay is undefined');
+    // }
     const newResultsToDisplay = resultsToDisplay;
     newResultsToDisplay[questionName] = [value];
     return newResultsToDisplay;
@@ -102,7 +80,7 @@ export default function Home() {
 
 
 
-  const [results,setResults] = useState<string[]>([]);
+  
 
   const handleChange = (changeEvent: React.SyntheticEvent) => {
     const target = changeEvent.target as HTMLInputElement;
@@ -110,7 +88,6 @@ export default function Home() {
     if (target.type === 'radio') {
         console.log("radio fired");
         resultsToDisplay = addNewRadioValue(target.name.toString(), target.value.toString(), resultsToDisplay);
-        console.log(resultsToDisplay);
 
     }
     if (target.type === 'checkbox') {
@@ -121,6 +98,7 @@ export default function Home() {
             updatedArray.push(target.value.toString());            
             const sliceArray: string[] = updatedArray.slice();
             setResults(sliceArray);
+            resultsToDisplay = addNewCheckboxValue(target.name.toString(), target.value.toString(), resultsToDisplay); 
         }
         if (!target.checked){
             const filteredArray = results.filter(item=>{
@@ -128,8 +106,10 @@ export default function Home() {
             });
             setResults(filteredArray);
             console.log(results);
+            resultsToDisplay = removeCheckboxValue(target.name.toString(), target.value.toString(), resultsToDisplay);
         }
     }
+    console.log("resultsToDisplay is ",resultsToDisplay);
   }
   return (
     <>
