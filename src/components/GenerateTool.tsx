@@ -67,7 +67,7 @@ export default function GenerateTool() {
 
   //addNewRadioValue functions 
 
-  const addNewRadioValue = (questionName: string, value: string, resultsToDisplay:{[questionName: string]: string[]}) =>{
+  const addNewRadioValue = (questionName: string, value: string, resultsToDisplay:{[questionName: string]: string[]})=>{
     // if(typeof resultsToDisplay === "undefined"){
     //   throw new Error('resultsToDisplay is undefined');
     // }
@@ -86,17 +86,20 @@ export default function GenerateTool() {
 
     if (target.type === 'radio') {
         console.log("radio fired");
-        setResultsToDisplay(addNewRadioValue(target.name.toString(), target.value.toString(), resultsToDisplay));
+        const newObject = {...addNewRadioValue(target.name.toString(), target.value.toString(), resultsToDisplay)};
+        setResultsToDisplay(newObject);
 
     }
     if (target.type === 'checkbox') {
         console.log("checkbox fired");
         if (target.checked){
             console.log("Checked")
-            setResultsToDisplay(addNewCheckboxValue(target.name.toString(), target.value.toString(), resultsToDisplay)); 
+            const newObject = {...addNewCheckboxValue(target.name.toString(), target.value.toString(), resultsToDisplay)};
+            setResultsToDisplay(newObject); 
         }
         if (!target.checked){
-          setResultsToDisplay(removeCheckboxValue(target.name.toString(), target.value.toString(), resultsToDisplay));
+          const newObject = {...removeCheckboxValue(target.name.toString(), target.value.toString(), resultsToDisplay)};
+          setResultsToDisplay(newObject);
         }
     }
     console.log("resultsToDisplay is ",resultsToDisplay);
@@ -104,7 +107,18 @@ export default function GenerateTool() {
   return (
     <div  className="flex">
         <Form handleChange = {handleChange} />
-        <FormResults/>
+        {/* {resultsToDisplay && Object.keys(resultsToDisplay).forEach(function(key, index))) (
+          <h3 key={index}> {resultsToDisplay[key]} </h3>
+        )} */}
+
+        <div>
+          <h1>Results</h1>
+          {resultsToDisplay&& Object.keys(resultsToDisplay).map((question, index)=>( // try javascript array foreach
+            <h2 key={index}>{question}</h2>
+
+          ))}
+        </div>
+        
     </div>
   );
 }
