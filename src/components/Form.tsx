@@ -11,7 +11,7 @@ interface formProps {
 
 const Form = ({handleChange}:formProps) => {
     return (  
-        <div>
+        <div className="flex-row justify-center">
             <form onChange={(e)=> {
                 console.log(e);
                 // console.log(e.target.name);
