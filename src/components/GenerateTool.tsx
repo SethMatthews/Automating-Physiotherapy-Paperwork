@@ -8,13 +8,7 @@ import FormResults from './FormResults';
 
 export default function GenerateTool() {
 
-  // const [results,setResults] = useState<string[]>([]);
-
-  // let resultsToDisplay: { [questionName: string]: string[]} = {};
-
   const [resultsToDisplay,setResultsToDisplay] = useState<{[questionName: string]: string[]}>({});
-
-
 
 
   const isQuestionInObject = (questionName: string, resultsToDisplay:{[questionName: string]: string[]}):boolean=> {
@@ -114,8 +108,11 @@ export default function GenerateTool() {
         <div>
           <h1>Results</h1>
           {resultsToDisplay&& Object.keys(resultsToDisplay).map((question, index)=>( // try javascript array foreach
-            <h2 key={index}>{question}</h2>
-
+            <div key={index}>
+              <h2 className="text-xl">{question}</h2>
+              <p className="text-sm"  >{resultsToDisplay[question]}</p>
+            </div>
+            
           ))}
         </div>
         
