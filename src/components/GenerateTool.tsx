@@ -105,15 +105,57 @@ export default function GenerateTool() {
           <h3 key={index}> {resultsToDisplay[key]} </h3>
         )} */}
 
-        <div className=" text-gray-800 w-2/4 m-10 bg-blue-50  p-10 rounded-md ">
-          <h1>Results</h1>
-          {resultsToDisplay&& Object.keys(resultsToDisplay).map((question, index)=>( // try javascript array foreach
-            <div key={index}>
-              <h2 className="text-xl">{question}</h2>
-              <p className="text-sm"  >{resultsToDisplay[question]}</p>
-            </div>
-            
-          ))}
+        <div className=" text-gray-800 w-2/4 m-12 bg-blue-50  p-10 rounded-md ">
+        7th of June 2023 <br/>
+          <br/>
+          Mr Seth Matthews <br/>
+          10 Bosisto Street <br/>
+          <b>RICHMOND 3121</b><br/>
+          <br/>
+
+
+
+          Dear Dr Bob Myers,<br/>
+          <br/>
+          <b>Re. Mr Seth Matthews of 10 Bosisto Street RICHMOND. DOB 04/12/1998.</b><br/> 
+          <br/>
+          Thank you for refering Seth to 4 Life Physiotherapy for opinion and management of lower bac pain. <br/>
+          <br/>
+
+          Subjective:
+          <ul>
+            {resultsToDisplay&& Object.keys(resultsToDisplay).map((question, index)=>( // try javascript array foreach
+              <div className='list-disc' key={index}>
+              {/* <li>{question}</li> */}
+              <li>{resultsToDisplay[question]}</li>
+              </div>              
+            ))}
+          </ul>
+
+          {/* Objective:
+          <ul className="outputSubjective2">
+
+          </ul>
+
+          Treatment:
+          <ul className="outputSubjective3">
+
+          </ul>
+
+          Plan:
+          <ul className="outputSubjective4">
+
+          </ul> */}
+
+          <br/>
+          <br/>
+          Yours Sincerly, <br/>
+          <br/>
+          Haydn Matthews <br/>
+          Physiotherapist <br/>
+          <br/>
+          
+          
         </div>
         
     </div>
