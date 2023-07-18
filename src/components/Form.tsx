@@ -11,7 +11,7 @@ interface formProps {
 
 const Form = ({handleChange}:formProps) => {
     return (  
-        <div className=" bg-gray-400 ">
+        <div className=" text-gray-50 w-2/4 m-10  bg-indigo-800 p-10 rounded-md">
             <form onChange={(e)=> {
                 console.log(e);
                 // console.log(e.target.name);

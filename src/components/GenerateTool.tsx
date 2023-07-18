@@ -99,13 +99,13 @@ export default function GenerateTool() {
     console.log("resultsToDisplay is ",resultsToDisplay);
   }
   return (
-    <div  className="flex justify-center">
+    <div  className="flex justify-around bg-blue-100" >
         <Form   handleChange = {handleChange} />
         {/* {resultsToDisplay && Object.keys(resultsToDisplay).forEach(function(key, index))) (
           <h3 key={index}> {resultsToDisplay[key]} </h3>
         )} */}
 
-        <div className="bg-red-300 ">
+        <div className=" text-gray-800 w-2/4 m-10 bg-blue-50  p-10 rounded-md ">
           <h1>Results</h1>
           {resultsToDisplay&& Object.keys(resultsToDisplay).map((question, index)=>( // try javascript array foreach
             <div key={index}>
