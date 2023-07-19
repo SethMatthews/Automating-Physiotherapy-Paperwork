@@ -105,7 +105,7 @@ export default function GenerateTool() {
           <h3 key={index}> {resultsToDisplay[key]} </h3>
         )} */}
 
-        <div className=" text-gray-800 w-2/4 m-12 bg-blue-50  p-10 rounded-md ">
+        <div className=" text-gray-800 w-2/4 m-12 bg-blue-50  p-10 rounded-lg ">
         7th of June 2023 <br/>
           <br/>
           Mr Seth Matthews <br/>
