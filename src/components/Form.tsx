@@ -60,6 +60,37 @@ const Form = ({handleChange}:formProps) => {
                 <CheckboxInput text="Lateral foot" value="Lateral foot" questionName="Any associated pins and needles or numbness?" />
                 <CheckboxInput text="Toes" value="Toes" questionName="Any associated pins and needles or numbness?" />
 
+                <h3 className="mt-3 mb-3">Aggravating factors?</h3>
+                <CheckboxInput text="Bending forward, extending" value="Bending forward, extending" questionName="Aggravating factors?" />
+                <CheckboxInput text="Sitting and standing for long periods" value="Sitting and standing for long periods" questionName="Aggravating factors?" />
+                <CheckboxInput text="Walking" value="Walking" questionName="Aggravating factors?" />
+                <CheckboxInput text="Bed mobility" value="Bed mobility" questionName="Aggravating factors?" />
+                <CheckboxInput text="Driving" value="Driving" questionName="Aggravating factors?" />
+                <CheckboxInput text="Lifting" value="Lifting" questionName="Aggravating factors?" />
+                <CheckboxInput text="House duties, vacuuming, mopping" value="House duties, vacuuming, mopping " questionName="Aggravating factors?" />
+                <CheckboxInput text="Running" value="Running" questionName="Aggravating factors?" />
+                <CheckboxInput text="Gym exercises" value="Gym exercises" questionName="Aggravating factors?" />
+                <CheckboxInput text="" value="" questionName="Aggravating factors?" />
+
+                <h3 className="mt-3 mb-3">Easing factors?</h3>
+                <CheckboxInput text="Heat pack" value="Heat pack" questionName="Easing factors?" />
+                <CheckboxInput text="Hot showers" value="Hot showers" questionName="Easing factors?" />
+                <CheckboxInput text="Pain relief Medications" value="Pain relief Medications" questionName="Easing factors?" />
+                <CheckboxInput text="Anti-inflammatories" value="Anti-inflammatories" questionName="Easing factors?" />
+                <CheckboxInput text="Movement" value="Movement" questionName="Easing factors?" />
+                <CheckboxInput text="Rest" value="Rest" questionName="Easing factors?" />
+                <CheckboxInput text="Stretches" value="Stretches" questionName="Easing factors?" />
+
+                <h3 className="mt-3 mb-3">Worse in mornings or worse throughout the day?</h3>
+                <RadioInputOption text="Morning" value="Morning" questionName="Worse in mornings or worse throughout the day?"/>
+                <RadioInputOption text="Night" value="Night" questionName="Worse in mornings or worse throughout the day?"/>
+
+                <h3 className="mt-3 mb-3">Does the pain wake you up at night?</h3>
+                <RadioInputOption text="Morning" value="Morning" questionName="Worse in mornings or worse throughout the day?"/>
+                <RadioInputOption text="Night" value="Night" questionName="Worse in mornings or worse throughout the day?"/>
+
+
+
             </form>
 
         </div>
