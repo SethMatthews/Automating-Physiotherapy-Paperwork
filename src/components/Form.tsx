@@ -33,11 +33,11 @@ const Form = ({handleChange}:formProps) => {
                 <RadioInputOption text="Right side" value="Unilateral pain on the right side" questionName="Has unilateral pain?"/>
 
                 <h3 className="mt-3 mb-3">Has bilateral pain?</h3>
-                <RadioInputOption text="None" value="No bilateral pain" questionName="Has bilateral pain?"/>
-                <RadioInputOption text="Centrally and right across the low back" value="Bilateral pain centrally and right across the low back" questionName="Has bilateral pain?"/>
-                <RadioInputOption text="Equally both sides" value="Bilateral pain equally both sides" questionName="Has bilateral pain?"/>
-                <RadioInputOption text="More one side than the other" value="Bilateral pain more one side than the other" questionName="Has bilateral pain?"/>
-                <RadioInputOption text="Changes from side to side depending on the day" value="Bilateral pain changes from side to side depending on the day" questionName="Has bilateral pain?"/>
+                <RadioInputOption text="No" value="No bilateral pain" questionName="Has bilateral pain?"/>
+                <RadioInputOption text="Yes, Centrally and right across the low back" value="Bilateral pain centrally and right across the low back" questionName="Has bilateral pain?"/>
+                <RadioInputOption text="Yes, Equally both sides" value="Bilateral pain equally both sides" questionName="Has bilateral pain?"/>
+                <RadioInputOption text="Yes, More one side than the other" value="Bilateral pain more one side than the other" questionName="Has bilateral pain?"/>
+                <RadioInputOption text="Yes, Changes from side to side depending on the day" value="Bilateral pain changes from side to side depending on the day" questionName="Has bilateral pain?"/>
                 
                 
                 <h3 className="mt-3 mb-3">Does the pain radiate into the?</h3>
