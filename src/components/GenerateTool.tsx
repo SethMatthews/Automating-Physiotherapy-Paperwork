@@ -138,13 +138,13 @@ export default function GenerateTool() {
     console.log("resultsToDisplay is ",resultsToDisplay);
   }
   return (
-    <div  className="flex justify-around bg-blue-100" >
+    <div  className="flex justify-around bg-blue-100 " >
         <Form  handleChange = {handleChange} resultsToDisplay={resultsToDisplay}  />
         {/* {resultsToDisplay && Object.keys(resultsToDisplay).forEach(function(key, index))) (
           <h3 key={index}> {resultsToDisplay[key]} </h3>
         )} */}
 
-        <div className=" text-gray-800 w-3/5 m-12 bg-white  p-10 rounded-lg ">
+        <div className=" text-gray-800 w-3/5 m-12 bg-white p-10 rounded-lg shadow-xl ">
         7th of June 2023 <br/>
           <br/>
           Mr Seth Matthews <br/>

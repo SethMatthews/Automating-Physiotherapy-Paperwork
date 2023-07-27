@@ -29,7 +29,7 @@ const Form = ({handleChange, resultsToDisplay}:formProps) => {
     const question1 = "How long have been experiencing pain?";
 
     return (  
-        <div className=" text-gray-500 w-2/5 m-12  bg-white p-10 rounded-lg">
+        <div className=" text-gray-500 w-2/5 m-12  bg-white p-10 rounded-lg shadow-xl">
             <form onChange={(e)=> {
                 // console.log(e.target.name);
                 handleChange(e);
