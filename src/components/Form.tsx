@@ -35,6 +35,11 @@ const Form = ({handleChange, resultsToDisplay}:formProps) => {
                 handleChange(e);
                 }}>
 
+                <h3 className="mt-3 mb-3">The back pain is?</h3>
+                <RadioInputOption text="chronic" value="chronic" questionName="The back pain is?"/>
+                <RadioInputOption text="acute" value="acute" questionName="The back pain is?"/>
+                <RadioInputOption text="acute on chronic" value="acute on chronic" questionName="The back pain is?"/>
+
                 
                 <h3 className="mt-3 mb-3">{question1}</h3>
                 <RadioInputOption text="No" value="No" questionName={question1}/>
