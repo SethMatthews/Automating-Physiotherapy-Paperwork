@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Form from './Form';
-import FormResults from './FormResults';
 
 
 
@@ -12,15 +11,12 @@ export default function GenerateTool() {
 
 
   const isQuestionInObject = (questionName: string, resultsToDisplay:{[questionName: string]: string[]}):boolean=> {
-    console.log(`Checking if ${questionName} is in the object `, resultsToDisplay);
-    console.log(`resultsToDisplay.hasOwnProperty(questionName) `, resultsToDisplay.hasOwnProperty(questionName));
     return resultsToDisplay.hasOwnProperty(questionName);
   }
 
   const addNewCheckboxValue = (questionName: string, value: string, resultsToDisplay:{[questionName: string]: string[]}) =>{
     
     if(isQuestionInObject(questionName,resultsToDisplay )){
-      console.log("Question exist");
       const newResultsToDisplay = resultsToDisplay;
       const oldValues: string[] = newResultsToDisplay[questionName] as string[];
       oldValues.push(value);
@@ -28,7 +24,6 @@ export default function GenerateTool() {
       newResultsToDisplay[questionName] = newValues;
       return newResultsToDisplay;
     } else {
-      console.log("Question does NOT exist");
       return addNewQuestion(questionName, value, resultsToDisplay);
     }
     
@@ -100,7 +95,7 @@ export default function GenerateTool() {
   }
   return (
     <div  className="flex justify-around bg-blue-100" >
-        <Form   handleChange = {handleChange} />
+        <Form  handleChange = {handleChange} resultsToDisplay={resultsToDisplay}  />
         {/* {resultsToDisplay && Object.keys(resultsToDisplay).forEach(function(key, index))) (
           <h3 key={index}> {resultsToDisplay[key]} </h3>
         )} */}

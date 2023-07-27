@@ -2,26 +2,53 @@ import CheckboxInput from "./CheckboxInput";
 import RadioInputOption from "./RadioInput";
 
 
+
 // handleChange(e.target.value);
 
-interface formProps {
-    // handleChange: (changeEvent: React.ChangeEvent<HTMLInputElement>|React.FormEvent<HTMLFormElement>)=>void;
+
+
+
+type formProps = {
     handleChange: (changeEvent: React.SyntheticEvent)=>void;
+    resultsToDisplay: {[questionName: string]: string[]};
+
 }
 
-const Form = ({handleChange}:formProps) => {
+const Form = ({handleChange, resultsToDisplay}:formProps) => {
+
+    const isNotValue = (questionNameToCheck:string, valueToCheckFor: string) => {
+        const questionValue: string[]|undefined = resultsToDisplay[questionNameToCheck];
+        if (questionValue===undefined){
+            return false
+
+        } else {
+            return questionValue[0]!==valueToCheckFor;
+        }
+    }
+
+    const question1 = "How long have been experiencing pain?";
+
     return (  
         <div className=" text-gray-50 w-2/4 m-12  bg-indigo-800 p-10 rounded-lg">
             <form onChange={(e)=> {
-                console.log(e);
                 // console.log(e.target.name);
                 handleChange(e);
                 }}>
-                <h3 className="mt-3 mb-3">How long have been experiencing pain?</h3>
-                <RadioInputOption text="days" value="Have been experiencing pain for days" questionName="How long have been experiencing pain?"/>
-                <RadioInputOption text="weeks" value="Have been experiencing pain for weeks" questionName="How long have been experiencing pain?"/>
-                <RadioInputOption text="months" value="Have been experiencing pain for months" questionName="How long have been experiencing pain?"/>
-                <RadioInputOption text="years" value="Have been experiencing pain for years" questionName="How long have been experiencing pain?"/>
+                <h3 className="mt-3 mb-3">{question1}</h3>
+                <RadioInputOption text="No" value="No" questionName={question1}/>
+                <RadioInputOption text="Yes" value="Yes" questionName={question1}/>
+
+                {isNotValue(question1,"No") && 
+                <div className="mx-5">
+                    <RadioInputOption text="days" value="Have been experiencing pain for days" questionName={question1}/>
+                    <RadioInputOption text="weeks" value="Have been experiencing pain for weeks" questionName={question1}/>
+                    <RadioInputOption text="months" value="Have been experiencing pain for months" questionName={question1}/>
+                    <RadioInputOption text="years" value="Have been experiencing pain for years" questionName={question1}/>
+                </div>
+                
+                }
+
+                
                 
                 <h3 className="mt-3 mb-3">First episode or has this been on and off?</h3>
                 <RadioInputOption text="First episode" value="This pain was the first episode" questionName="First episode or has this been on and off?"/>
