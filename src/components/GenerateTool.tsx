@@ -77,6 +77,7 @@ export default function GenerateTool() {
         console.log("radio fired");
         const newObject = {...addNewRadioValue(target.name.toString(), target.value.toString(), resultsToDisplay)};
         setResultsToDisplay(newObject);
+        
 
     }
     if (target.type === 'checkbox') {
@@ -91,6 +92,49 @@ export default function GenerateTool() {
           setResultsToDisplay(newObject);
         }
     }
+
+    // console.log("changeEvent is", changeEvent);
+    // console.log(target.parentElement);
+    // if (target.parentElement===null){
+    // }else{
+    //   console.log("LOOK HERE ",target.parentElement.parentElement.children);
+    //   target.parentElement.classList.toggle("bg-blue-800");
+    //   console.log(target.parentElement.classList);
+    // }
+
+
+
+    // const formElement = document.querySelector("form");
+    // const formElementChildren = formElement?.children;
+
+    // if (formElementChildren!==undefined){
+    //   for (const element of formElementChildren ){
+    //     console.log(element);
+    //     if (element.checked){
+
+    //     }
+    //   }
+    // }
+
+    const inputElements = document.querySelectorAll("input");
+    for (const inputElement of inputElements ){
+      if(inputElement.checked){
+        inputElement?.parentElement?.classList.add("bg-blue-800");
+        inputElement?.parentElement?.classList.add("text-white");
+       
+
+      }else{
+        inputElement?.parentElement?.classList.remove("bg-blue-800");
+        inputElement?.parentElement?.classList.remove("text-white");
+      }
+
+    }
+
+  
+
+    
+
+
     console.log("resultsToDisplay is ",resultsToDisplay);
   }
   return (
@@ -100,7 +144,7 @@ export default function GenerateTool() {
           <h3 key={index}> {resultsToDisplay[key]} </h3>
         )} */}
 
-        <div className=" text-gray-800 w-2/4 m-12 bg-blue-50  p-10 rounded-lg ">
+        <div className=" text-gray-800 w-3/5 m-12 bg-white  p-10 rounded-lg ">
         7th of June 2023 <br/>
           <br/>
           Mr Seth Matthews <br/>

@@ -29,11 +29,13 @@ const Form = ({handleChange, resultsToDisplay}:formProps) => {
     const question1 = "How long have been experiencing pain?";
 
     return (  
-        <div className=" text-gray-50 w-2/4 m-12  bg-indigo-800 p-10 rounded-lg">
+        <div className=" text-gray-500 w-2/5 m-12  bg-white p-10 rounded-lg">
             <form onChange={(e)=> {
                 // console.log(e.target.name);
                 handleChange(e);
                 }}>
+
+                
                 <h3 className="mt-3 mb-3">{question1}</h3>
                 <RadioInputOption text="No" value="No" questionName={question1}/>
                 <RadioInputOption text="Yes" value="Yes" questionName={question1}/>
@@ -45,11 +47,8 @@ const Form = ({handleChange, resultsToDisplay}:formProps) => {
                     <RadioInputOption text="months" value="Have been experiencing pain for months" questionName={question1}/>
                     <RadioInputOption text="years" value="Have been experiencing pain for years" questionName={question1}/>
                 </div>
-                
                 }
 
-                
-                
                 <h3 className="mt-3 mb-3">First episode or has this been on and off?</h3>
                 <RadioInputOption text="First episode" value="This pain was the first episode" questionName="First episode or has this been on and off?"/>
                 <RadioInputOption text="On and off"  value="This pain has been on and off" questionName="First episode or has this been on and off?"/>
