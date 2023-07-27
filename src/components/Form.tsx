@@ -40,21 +40,45 @@ const Form = ({handleChange, resultsToDisplay}:formProps) => {
                 <h3 className="mt-3 mb-3">The back pain is?</h3>
                 <RadioInputOption text="chronic" value="chronic" questionName="The back pain is?"/>
                 <RadioInputOption text="acute" value="acute" questionName="The back pain is?"/>
+                    {isOptionSelected("acute","The back pain is?") && 
+                        <div className="ml-10">
+                            <h3 className="mt-3 mb-3">Was there an incident to cause this pain?</h3>
+                            <RadioInputOption text="No" value="No" questionName={"The back pain is?"+"-sub-"+"acute"}/>
+                            <RadioInputOption text="Yes" value="Yes" questionName={"The back pain is?"+"-sub-"+"acute"}/>
+                                {isOptionSelected("Yes","The back pain is?"+"-sub-"+"acute") && 
+                                <div className="ml-10">
+                                    <h3 className="mt-3 mb-3">What was the incident?</h3>
+                                </div>
+                                }
+                        </div>
+                    }
+
                 <RadioInputOption text="acute on chronic" value="acute on chronic" questionName="The back pain is?"/>
+                    {isOptionSelected("acute on chronic","The back pain is?") && 
+                    <div className="ml-10">
+                        <h3 className="mt-3 mb-3">Was there an incident to cause this pain?</h3>
+                        <RadioInputOption text="No" value="No" questionName={"The back pain is?"+"-sub-"+"acute on chronic"}/>
+                        <RadioInputOption text="Yes" value="Yes" questionName={"The back pain is?"+"-sub-"+"acute on chronic"}/>
+                            {isOptionSelected("Yes","The back pain is?"+"-sub-"+"acute on chronic") && 
+                            <div className="ml-10">
+                                <h3 className="mt-3 mb-3">What was the incident?</h3>
+                            </div>
+                            }
+                    </div>
+                    }
 
                 
                 <h3 className="mt-3 mb-3">{question1}</h3>
                 <RadioInputOption text="No" value="No" questionName={question1}/>
                 <RadioInputOption text="Yes" value="Yes" questionName={question1}/>
-
-                {isOptionSelected("Yes",question1) && 
-                <div className="mx-5">
-                    <RadioInputOption text="days" value="Have been experiencing pain for days" questionName={question1+"-sub-"+"Yes"}/>
-                    <RadioInputOption text="weeks" value="Have been experiencing pain for weeks" questionName={question1+"-sub-"+"Yes"}/>
-                    <RadioInputOption text="months" value="Have been experiencing pain for months" questionName={question1+"-sub-"+"Yes"}/>
-                    <RadioInputOption text="years" value="Have been experiencing pain for years" questionName={question1+"-sub-"+"Yes"}/>
-                </div>
-                }
+                    {isOptionSelected("Yes",question1) && 
+                    <div className="ml-10">
+                        <RadioInputOption text="days" value="Have been experiencing pain for days" questionName={question1+"-sub-"+"Yes"}/>
+                        <RadioInputOption text="weeks" value="Have been experiencing pain for weeks" questionName={question1+"-sub-"+"Yes"}/>
+                        <RadioInputOption text="months" value="Have been experiencing pain for months" questionName={question1+"-sub-"+"Yes"}/>
+                        <RadioInputOption text="years" value="Have been experiencing pain for years" questionName={question1+"-sub-"+"Yes"}/>
+                    </div>
+                    }
 
                 <h3 className="mt-3 mb-3">First episode or has this been on and off?</h3>
                 <RadioInputOption text="First episode" value="This pain was the first episode" questionName="First episode or has this been on and off?"/>
