@@ -16,13 +16,15 @@ type formProps = {
 
 const Form = ({handleChange, resultsToDisplay}:formProps) => {
 
-    const isNotValue = (questionNameToCheck:string, valueToCheckFor: string) => {
+    const isOptionSelected = ( option: string, questionNameToCheck:string) => {
         const questionValue: string[]|undefined = resultsToDisplay[questionNameToCheck];
         if (questionValue===undefined){
             return false
 
         } else {
-            return questionValue[0]!==valueToCheckFor;
+            console.log("questionValue[0] ",questionValue[0]);
+            console.log("option ",option);
+            return questionValue[0]===option;
         }
     }
 
@@ -45,12 +47,12 @@ const Form = ({handleChange, resultsToDisplay}:formProps) => {
                 <RadioInputOption text="No" value="No" questionName={question1}/>
                 <RadioInputOption text="Yes" value="Yes" questionName={question1}/>
 
-                {isNotValue(question1,"No") && 
+                {isOptionSelected("Yes",question1) && 
                 <div className="mx-5">
-                    <RadioInputOption text="days" value="Have been experiencing pain for days" questionName={question1}/>
-                    <RadioInputOption text="weeks" value="Have been experiencing pain for weeks" questionName={question1}/>
-                    <RadioInputOption text="months" value="Have been experiencing pain for months" questionName={question1}/>
-                    <RadioInputOption text="years" value="Have been experiencing pain for years" questionName={question1}/>
+                    <RadioInputOption text="days" value="Have been experiencing pain for days" questionName={question1+"-sub-"+"Yes"}/>
+                    <RadioInputOption text="weeks" value="Have been experiencing pain for weeks" questionName={question1+"-sub-"+"Yes"}/>
+                    <RadioInputOption text="months" value="Have been experiencing pain for months" questionName={question1+"-sub-"+"Yes"}/>
+                    <RadioInputOption text="years" value="Have been experiencing pain for years" questionName={question1+"-sub-"+"Yes"}/>
                 </div>
                 }
 
