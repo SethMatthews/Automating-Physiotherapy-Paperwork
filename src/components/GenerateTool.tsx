@@ -145,56 +145,77 @@ export default function GenerateTool() {
         )} */}
 
         <div className=" text-gray-800 w-3/5 m-12 bg-white p-10 rounded-lg shadow-xl ">
-        7th of June 2023 <br/>
-          <br/>
-          Mr Seth Matthews <br/>
-          10 Bosisto Street <br/>
-          <b>RICHMOND 3121</b><br/>
-          <br/>
+    
+          <div className="flex justify-end ">
+            <button className="p-4 rounded-2xl bg-slate-100 shadow-lg"  onClick={(event)=>{
+              console.log("Click Event",event );
+              const output = document.querySelector(".output-div");
+              console.log(output?.textContent);
+
+              const textOutput = output?.textContent as string;
+
+              navigator.clipboard.writeText(textOutput)
+                .then(() => {
+                  alert("Copied text to keyboard");
+                }).catch(()=>{
+                  console.log("Error");
+                });
+
+            }}>
+              Copy
+            </button>
+            </div>
+            <div className="output-div">
+              7th of June 2023 <br/>
+              <br/>
+              Mr Seth Matthews <br/>
+              10 Bosisto Street <br/>
+              <b>RICHMOND 3121</b><br/>
+              <br/>
 
 
 
-          Dear Dr Bob Myers,<br/>
-          <br/>
-          <b>Re. Mr Seth Matthews of 10 Bosisto Street RICHMOND. DOB 04/12/1998.</b><br/> 
-          <br/>
-          Thank you for refering Seth to 4 Life Physiotherapy for opinion and management of lower bac pain. <br/>
-          <br/>
+              Dear Dr Bob Myers,<br/>
+              <br/>
+              <b>Re. Mr Seth Matthews of 10 Bosisto Street RICHMOND. DOB 04/12/1998.</b><br/> 
+              <br/>
+              Thank you for refering Seth to 4 Life Physiotherapy for opinion and management of lower bac pain. <br/>
+              <br/>
 
-          Subjective:
-          <ul>
-            {resultsToDisplay&& Object.keys(resultsToDisplay).map((question, index)=>( // try javascript array foreach
-              <div className='list-disc' key={index}>
-              {/* <li>{question}</li> */}
-              <li>{resultsToDisplay[question]}</li>
-              </div>              
-            ))}
-          </ul>
+              Subjective:
+              <ul>
+                {resultsToDisplay&& Object.keys(resultsToDisplay).map((question, index)=>( // try javascript array foreach
+                  <div className='list-disc' key={index}>
+                  {/* <li>{question}</li> */}
+                  <li>{resultsToDisplay[question]}</li>
+                  </div>              
+                ))}
+              </ul>
 
-          {/* Objective:
-          <ul className="outputSubjective2">
+              {/* Objective:
+              <ul className="outputSubjective2">
 
-          </ul>
+              </ul>
 
-          Treatment:
-          <ul className="outputSubjective3">
+              Treatment:
+              <ul className="outputSubjective3">
 
-          </ul>
+              </ul>
 
-          Plan:
-          <ul className="outputSubjective4">
+              Plan:
+              <ul className="outputSubjective4">
 
-          </ul> */}
+              </ul> */}
 
-          <br/>
-          <br/>
-          Yours Sincerly, <br/>
-          <br/>
-          Haydn Matthews <br/>
-          Physiotherapist <br/>
-          <br/>
-          
-          
+              <br/>
+              <br/>
+              Yours Sincerly, <br/>
+              <br/>
+              Haydn Matthews <br/>
+              Physiotherapist <br/>
+              <br/>
+            </div>
+
         </div>
         
     </div>
