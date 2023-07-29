@@ -1,14 +1,4 @@
-import CheckboxInput from "./CheckboxInput";
-import RadioInputOption from "./RadioInput";
-import WasThereAnIncidentThatCausedThePain from "./WasThereAnIncidentThatCausedThePain";
-import WhatWasTheInscident from "./WhatWasTheIncident";
-
-
-
-// handleChange(e.target.value);
-
-
-
+import WhatIsTheNatureOfPain from "./WhatIsTheNatureOfPain";
 
 type formProps = {
     handleChange: (changeEvent: React.SyntheticEvent)=>void;
@@ -30,7 +20,8 @@ const Form = ({handleChange, resultsToDisplay}:formProps) => {
         }
     }
 
-    const question1 = "How long have been experiencing pain?";
+    // const question1 = "How long have been experiencing pain?";
+
 
     return (  
         <div className=" text-gray-500 w-2/5 m-12  bg-white p-10 rounded-lg shadow-xl">
@@ -39,43 +30,12 @@ const Form = ({handleChange, resultsToDisplay}:formProps) => {
                 handleChange(e);
                 }}>
 
-                <h3 className="mt-3 mb-3">What is the nature of pain?</h3>
-                <RadioInputOption text="acute" value="acute" questionName="What is the nature of pain?"/>
-                    {isOptionSelected("acute","What is the nature of pain?") && 
-                        <div className="ml-10">
-                            <h3 className="mt-3 mb-3">How long have been experiencing low back pain?</h3>
-                            <RadioInputOption text="Days" value="Days" questionName={"How long have been experiencing low back pain?"+"-sub-"+"acute"}/>
-                                {isOptionSelected("Days","How long have been experiencing low back pain?"+"-sub-"+"acute") && 
-                                <WasThereAnIncidentThatCausedThePain selectedOption="Days" isOptionSelected={isOptionSelected} />
-                                }
-                            <RadioInputOption text="Weeks" value="Weeks" questionName={"How long have been experiencing low back pain?"+"-sub-"+"acute"}/>
-                                {isOptionSelected("Weeks","How long have been experiencing low back pain?"+"-sub-"+"acute") && 
-                                <WasThereAnIncidentThatCausedThePain selectedOption="Weeks" isOptionSelected={isOptionSelected} />
-                                }
-                            <RadioInputOption text="Months" value="Months" questionName={"How long have been experiencing low back pain?"+"-sub-"+"acute"}/>
-                                {isOptionSelected("Months","How long have been experiencing low back pain?"+"-sub-"+"acute") && 
-                                <WasThereAnIncidentThatCausedThePain selectedOption="Months" isOptionSelected={isOptionSelected} />
-                                }
-                                
-                        </div>
-                    }
-                <RadioInputOption text="chronic" value="chronic" questionName="What is the nature of pain?"/>
-                <RadioInputOption text="acute on chronic" value="acute on chronic" questionName="What is the nature of pain?"/>
-                    {isOptionSelected("acute on chronic","What is the nature of pain?") && 
-                    <div className="ml-10">
-                        <h3 className="mt-3 mb-3">Was there an incident to cause this pain?</h3>
-                        <RadioInputOption text="No" value="No" questionName={"What is the nature of pain?"+"-sub-"+"acute on chronic"}/>
-                        <RadioInputOption text="Yes" value="Yes" questionName={"What is the nature of pain?"+"-sub-"+"acute on chronic"}/>
-                            {isOptionSelected("Yes","What is the nature of pain?"+"-sub-"+"acute on chronic") && 
-                            <div className="ml-10">
-                                <h3 className="mt-3 mb-3">What was the incident?</h3>
-                            </div>
-                            }
-                    </div>
-                    }
+                <WhatIsTheNatureOfPain parentQuestionPath={"What is the nature of pain?"} isOptionSelected={isOptionSelected} />
 
                 
-                <h3 className="mt-3 mb-3">{question1}</h3>
+
+                
+                {/* <h3 className="mt-3 mb-3">{question1}</h3>
                 <RadioInputOption text="No" value="No" questionName={question1}/>
                 <RadioInputOption text="Yes" value="Yes" questionName={question1}/>
                     {isOptionSelected("Yes",question1) && 
@@ -151,7 +111,7 @@ const Form = ({handleChange, resultsToDisplay}:formProps) => {
 
                 <h3 className="mt-3 mb-3">Does the pain wake you up at night?</h3>
                 <RadioInputOption text="Morning" value="Morning" questionName="Worse in mornings or worse throughout the day?"/>
-                <RadioInputOption text="Night" value="Night" questionName="Worse in mornings or worse throughout the day?"/>
+                <RadioInputOption text="Night" value="Night" questionName="Worse in mornings or worse throughout the day?"/> */}
 
 
 
