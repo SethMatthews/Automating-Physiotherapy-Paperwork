@@ -5,9 +5,8 @@ import WhereIsThePainLocatedOptionRadiatesInto from "../WhereIsThePainLocatedOpt
 type isOptionSelectedType = (option: string, questionNameToCheck: string) => boolean;
 
 
-const WhereIsThePainLocatedOptionLeftSideOfLowBack = ({parentQuestionPath, isOptionSelected}:{parentQuestionPath: string, isOptionSelected: isOptionSelectedType}) => {
+const WhereIsThePainLocatedOptionLeftSideOfLowBack = ({selectedOption, parentQuestionPath, isOptionSelected}:{selectedOption: string, parentQuestionPath: string, isOptionSelected: isOptionSelectedType}) => {
 
-    const selectedOption = "Left side of lower back";
     const currentQuestionPath = parentQuestionPath+"-"+selectedOption;
 
     return (

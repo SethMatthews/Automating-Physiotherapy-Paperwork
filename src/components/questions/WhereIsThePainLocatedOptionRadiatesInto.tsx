@@ -17,7 +17,12 @@ const WhereIsThePainLocatedOptionRadiatesInto = ({parentQuestionPath, isOptionSe
                 <div className="ml-10">
                     <h3 className="mt-3 mb-3">The pain radiates into?</h3>
 
-                    <RadiatesIntoOption painLocation="Lateral thigh"  parentQuestionPath={currentQuestionPath} isOptionSelected={isOptionSelected} />
+                    <RadiatesIntoOption painLocation="Glute"  parentQuestionPath={currentQuestionPath} isOptionSelected={isOptionSelected} />
+                    <RadiatesIntoOption painLocation="Lateral thigh "  parentQuestionPath={currentQuestionPath} isOptionSelected={isOptionSelected} />
+                    <RadiatesIntoOption painLocation="Lateral calf"  parentQuestionPath={currentQuestionPath} isOptionSelected={isOptionSelected} />
+                    <RadiatesIntoOption painLocation="Posterior thigh"  parentQuestionPath={currentQuestionPath} isOptionSelected={isOptionSelected} />
+                    <RadiatesIntoOption painLocation="Anterior thigh"  parentQuestionPath={currentQuestionPath} isOptionSelected={isOptionSelected} />
+                    <RadiatesIntoOption painLocation="Into the foot"  parentQuestionPath={currentQuestionPath} isOptionSelected={isOptionSelected} />
 
                 </div>
             }
