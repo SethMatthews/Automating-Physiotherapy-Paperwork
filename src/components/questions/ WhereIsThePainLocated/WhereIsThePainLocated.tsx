@@ -1,4 +1,5 @@
 
+import WhereIsThePainLocatedOptionBilaterally from "./WhereIsThePainLocatedOptionBilaterally";
 import WhereIsThePainLocatedOptionLeftSideOfLowBack from "./WhereIsThePainLocatedOptionLeftSideOfLowBack";
 
 
@@ -12,8 +13,11 @@ const WhereIsThePainLocated = ({parentQuestionPath, isOptionSelected}:{parentQue
             <WhereIsThePainLocatedOptionLeftSideOfLowBack selectedOption="Left side of lower back"  parentQuestionPath={parentQuestionPath} isOptionSelected={isOptionSelected} />
             <WhereIsThePainLocatedOptionLeftSideOfLowBack selectedOption="Right side of low back"  parentQuestionPath={parentQuestionPath} isOptionSelected={isOptionSelected} />
             <WhereIsThePainLocatedOptionLeftSideOfLowBack selectedOption="More on one side that changes between side"  parentQuestionPath={parentQuestionPath} isOptionSelected={isOptionSelected} />
-            
 
+            <WhereIsThePainLocatedOptionBilaterally selectedOption="Bilaterally" parentQuestionPath={parentQuestionPath} isOptionSelected={isOptionSelected} />
+
+            {/* <WhereIsThePainLocatedOptionLeftSideOfLowBack selectedOption="Bilaterally"  parentQuestionPath={parentQuestionPath} isOptionSelected={isOptionSelected} /> */}
+            
 
         </div>
 
