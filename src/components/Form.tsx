@@ -46,21 +46,16 @@ const Form = ({handleChange, resultsToDisplay}:formProps) => {
                             <h3 className="mt-3 mb-3">How long have been experiencing low back pain?</h3>
                             <RadioInputOption text="Days" value="Days" questionName={"How long have been experiencing low back pain?"+"-sub-"+"acute"}/>
                                 {isOptionSelected("Days","How long have been experiencing low back pain?"+"-sub-"+"acute") && 
-                                // <div className="ml-10">
-                                //     <h3 className="mt-3 mb-3">Was there an incident that caused the pain?</h3>
-                                //     <RadioInputOption text="Yes" value="Yes" questionName={"Was there an incident that caused the pain?"+"-sub-"+"Days"}/>
-
-                                //     {isOptionSelected("Yes","Was there an incident that caused the pain?"+"-sub-"+"Days") && 
-                                //     <WhatWasTheInscident selectedOption="Yes"/>
-                                //     }
-                                        
-                                //     <RadioInputOption text="No" value="No" questionName={"Was there an incident that caused the pain?"+"-sub-"+"Days"}/>
-                                // </div>
                                 <WasThereAnIncidentThatCausedThePain selectedOption="Days" isOptionSelected={isOptionSelected} />
                                 }
                             <RadioInputOption text="Weeks" value="Weeks" questionName={"How long have been experiencing low back pain?"+"-sub-"+"acute"}/>
-                            <RadioInputOption text="Months" value="Weeks" questionName={"How long have been experiencing low back pain?"+"-sub-"+"acute"}/>
-                            <RadioInputOption text="Weeks" value="Weeks" questionName={"How long have been experiencing low back pain?"+"-sub-"+"acute"}/>
+                                {isOptionSelected("Weeks","How long have been experiencing low back pain?"+"-sub-"+"acute") && 
+                                <WasThereAnIncidentThatCausedThePain selectedOption="Weeks" isOptionSelected={isOptionSelected} />
+                                }
+                            <RadioInputOption text="Months" value="Months" questionName={"How long have been experiencing low back pain?"+"-sub-"+"acute"}/>
+                                {isOptionSelected("Months","How long have been experiencing low back pain?"+"-sub-"+"acute") && 
+                                <WasThereAnIncidentThatCausedThePain selectedOption="Months" isOptionSelected={isOptionSelected} />
+                                }
                                 
                         </div>
                     }

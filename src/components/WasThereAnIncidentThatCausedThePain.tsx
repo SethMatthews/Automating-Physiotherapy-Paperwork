@@ -8,7 +8,7 @@ const WasThereAnIncidentThatCausedThePain = ({selectedOption, isOptionSelected}:
             <h3 className="mt-3 mb-3">Was there an incident that caused the pain?</h3>
             <RadioInputOption text="Yes" value="Yes" questionName={"Was there an incident that caused the pain?"+"-sub-"+selectedOption}/>
 
-            {isOptionSelected("Yes","Was there an incident that caused the pain?"+"-sub-"+"Days") && 
+            {isOptionSelected("Yes","Was there an incident that caused the pain?"+"-sub-"+selectedOption) && 
             <WhatWasTheInscident selectedOption="Yes"/>
             }
                 
