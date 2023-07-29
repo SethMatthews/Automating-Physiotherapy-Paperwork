@@ -20,10 +20,6 @@ const WhereIsThePainLocatedOptionLeftSideOfLowBack = ({selectedOption, parentQue
                     <LeftSideOfLowBackOptionThePainIsLocalToTheLowBack  parentQuestionPath={currentQuestionPath} isOptionSelected={isOptionSelected} />
                     <WhereIsThePainLocatedOptionRadiatesInto  parentQuestionPath={currentQuestionPath} isOptionSelected={isOptionSelected} />
 
-                    {/* <RadioInputOption text="Days" value="Days" questionName={currentQuestionPath}/>
-                        {isOptionSelected("Days",currentQuestionPath) && 
-                        <WasThereAnIncidentThatCausedThePain selectedOption="Days" isOptionSelected={isOptionSelected} />
-                        } */}
 
 
                 </div>
