@@ -186,8 +186,7 @@ export default function GenerateTool() {
               <ul>
                 {resultsToDisplay&& Object.keys(resultsToDisplay).map((question, index)=>( // try javascript array foreach
                   <div className='list-disc' key={index}>
-                  {/* <li>{question}</li> */}
-                  <li>{resultsToDisplay[question]}</li>
+                  <li>{question} === {resultsToDisplay[question]} </li>
                   </div>              
                 ))}
               </ul>
