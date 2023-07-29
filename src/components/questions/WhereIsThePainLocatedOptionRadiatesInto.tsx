@@ -1,5 +1,5 @@
 import RadioInputOption from "../RadioInput";
-import RadiatesIntoOptionGlute from "./RadiatesInto/RadiatesIntoOptionGlute";
+import RadiatesIntoOption from "./RadiatesInto/RadiatesIntoOption";
 
 
 type isOptionSelectedType = (option: string, questionNameToCheck: string) => boolean;
@@ -17,7 +17,7 @@ const WhereIsThePainLocatedOptionRadiatesInto = ({parentQuestionPath, isOptionSe
                 <div className="ml-10">
                     <h3 className="mt-3 mb-3">The pain radiates into?</h3>
 
-                    <RadiatesIntoOptionGlute  parentQuestionPath={currentQuestionPath} isOptionSelected={isOptionSelected} />
+                    <RadiatesIntoOption painLocation="Lateral thigh"  parentQuestionPath={currentQuestionPath} isOptionSelected={isOptionSelected} />
 
                 </div>
             }

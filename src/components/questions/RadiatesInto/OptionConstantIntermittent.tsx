@@ -1,8 +1,9 @@
+//OptionConstantIntermittent
+
 import RadioInputOption from "~/components/RadioInput";
 
-const GluteOptionConstant = ({parentQuestionPath}:{parentQuestionPath: string}) => {
+const OptionConstantIntermittent = ({selectedOption, parentQuestionPath}:{selectedOption:string , parentQuestionPath: string}) => {
 
-    const selectedOption = "Constant";
 
     return (  
         <div>
@@ -13,4 +14,4 @@ const GluteOptionConstant = ({parentQuestionPath}:{parentQuestionPath: string}) 
     );
 }
  
-export default GluteOptionConstant;
+export default OptionConstantIntermittent;
