@@ -24,6 +24,16 @@ const Form = ({handleChange, resultsToDisplay}:formProps) => {
         }
     }
 
+    const isCheckboxOptionSelected = ( option: string, questionNameToCheck:string) => {
+        const questionValues: string[]|undefined = resultsToDisplay[questionNameToCheck];
+        if (questionValues===undefined){
+            return false
+
+        } else {
+            return questionValues.includes(option);
+        }
+    }
+
     // const question1 = "How long have been experiencing pain?";
 
 
@@ -41,7 +51,7 @@ const Form = ({handleChange, resultsToDisplay}:formProps) => {
 
                 <AggravatingFactors parentQuestionPath="Aggravating factors?" isOptionSelected={isOptionSelected} />
 
-                <EasingFactors parentQuestionPath="Easing factors?" isOptionSelected={isOptionSelected} />
+                <EasingFactors parentQuestionPath="Easing factors?"  isCheckboxOptionSelected={isCheckboxOptionSelected} />
                 
 
             </form>

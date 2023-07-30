@@ -8,7 +8,7 @@ import OptionMedications from "./OptionMedications";
 
 type isOptionSelectedType = (option: string, questionNameToCheck: string) => boolean;
 
-const EasingFactors = ({parentQuestionPath, isOptionSelected}:{parentQuestionPath: string, isOptionSelected: isOptionSelectedType}) => {
+const EasingFactors = ({parentQuestionPath, isCheckboxOptionSelected}:{parentQuestionPath: string, isCheckboxOptionSelected: isOptionSelectedType}) => {
     
     return (  
         <div>
@@ -19,7 +19,7 @@ const EasingFactors = ({parentQuestionPath, isOptionSelected}:{parentQuestionPat
             <AggravatingFactorsOptions selectedOption="Stretching" parentQuestionPath={parentQuestionPath}  />
             <AggravatingFactorsOptions selectedOption="Movement" parentQuestionPath={parentQuestionPath}  />
             <AggravatingFactorsOptions selectedOption="Massage cream" parentQuestionPath={parentQuestionPath}  />
-            <OptionMedications selectedOption="Medications" parentQuestionPath={parentQuestionPath} isOptionSelected={isOptionSelected}   />
+            <OptionMedications selectedOption="Medications" parentQuestionPath={parentQuestionPath} isCheckboxOptionSelected={isCheckboxOptionSelected}   />
 
             {/* <OptionConstantIntermittent selectedOption="Yes" parentQuestionPath={parentQuestionPath}  isOptionSelected={isOptionSelected} /> */}
         </div>
@@ -27,3 +27,4 @@ const EasingFactors = ({parentQuestionPath, isOptionSelected}:{parentQuestionPat
 }
  
 export default EasingFactors;
+
