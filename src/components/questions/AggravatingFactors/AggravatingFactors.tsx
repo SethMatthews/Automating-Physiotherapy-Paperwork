@@ -5,7 +5,7 @@ import AggravatingFactorsOptionsGym from "./AggravatingFactorsOptionsGym";
 
 type isOptionSelectedType = (option: string, questionNameToCheck: string) => boolean;
 
-const AggravatingFactors = ({parentQuestionPath, isOptionSelected}:{parentQuestionPath: string, isOptionSelected: isOptionSelectedType}) => {
+const AggravatingFactors = ({parentQuestionPath, isCheckboxOptionSelected}:{parentQuestionPath: string, isCheckboxOptionSelected: isOptionSelectedType}) => {
     
     return (  
         <div>
@@ -17,7 +17,7 @@ const AggravatingFactors = ({parentQuestionPath, isOptionSelected}:{parentQuesti
             <AggravatingFactorsOptions selectedOption="Standing for long periods" parentQuestionPath={parentQuestionPath}  />
             <AggravatingFactorsOptions selectedOption="Sitting" parentQuestionPath={parentQuestionPath}  />
             <AggravatingFactorsOptions selectedOption="Putting socks and shoes on" parentQuestionPath={parentQuestionPath}  />
-            <AggravatingFactorsOptionsGym  selectedOption="Gym exercises" parentQuestionPath={parentQuestionPath} isOptionSelected={isOptionSelected}  />
+            <AggravatingFactorsOptionsGym  selectedOption="Gym exercises" parentQuestionPath={parentQuestionPath} isCheckboxOptionSelected={isCheckboxOptionSelected}  />
             <AggravatingFactorsOptions selectedOption="Other please specific" parentQuestionPath={parentQuestionPath}  />
 
             

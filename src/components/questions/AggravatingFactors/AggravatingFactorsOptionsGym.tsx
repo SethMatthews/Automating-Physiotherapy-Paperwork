@@ -5,13 +5,13 @@ import CheckboxInput from "~/components/CheckboxInput";
 
 type isOptionSelectedType = (option: string, questionNameToCheck: string) => boolean;
 
-const AggravatingFactorsOptionsGym = ({selectedOption, parentQuestionPath, isOptionSelected}:{selectedOption:string , parentQuestionPath: string, isOptionSelected:isOptionSelectedType }) => {
+const AggravatingFactorsOptionsGym = ({selectedOption, parentQuestionPath, isCheckboxOptionSelected}:{selectedOption:string , parentQuestionPath: string, isCheckboxOptionSelected:isOptionSelectedType }) => {
 
     const currentQuestionPath = parentQuestionPath+"-"+selectedOption;
     return (  
         <div>
             <CheckboxInput text={selectedOption} value={selectedOption} questionName={parentQuestionPath}/>
-            {isOptionSelected(selectedOption,parentQuestionPath) && 
+            {isCheckboxOptionSelected(selectedOption,parentQuestionPath) && 
                 <div className="ml-10">
                     <CheckboxInput text="Squats" value="Squats" questionName={currentQuestionPath}/>
                     <CheckboxInput text="Deadlift" value="Deadlift" questionName={currentQuestionPath}/>
