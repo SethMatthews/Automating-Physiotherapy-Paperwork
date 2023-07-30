@@ -38,6 +38,14 @@ export default function GenerateTool() {
     return newResultsToDisplay;
   }
 
+  
+
+  const removeQuestion = (questionName: string, resultsToDisplay:{[questionName: string]: string[]}) =>{
+    const newResultsToDisplay = {...resultsToDisplay};
+    delete newResultsToDisplay[questionName];
+    return newResultsToDisplay;
+  }
+
 
   //removeCheckboxValue function 
 
@@ -64,6 +72,39 @@ export default function GenerateTool() {
     newResultsToDisplay[questionName] = [value];
     return newResultsToDisplay;
   }
+
+  const handleClick = (clickEvent: React.SyntheticEvent) => {
+    const target = clickEvent.target as HTMLInputElement;
+
+    if (target.type === 'radio') {
+        console.log("radio fired");
+
+        if (isQuestionInObject(target.name.toString(),resultsToDisplay )){
+          console.log("Already CHECKED");
+          console.log("REMOVING QUESTION ");
+          target.checked = false; //unchecks element
+          setResultsToDisplay(removeQuestion(target.name.toString(),resultsToDisplay));
+        } else {
+          console.log("NOT CHECKED, Completely new");
+        }
+    }
+
+    const inputElements = document.querySelectorAll("input");
+    for (const inputElement of inputElements ){
+      if(inputElement.checked){
+        inputElement?.parentElement?.classList.add("bg-blue-800");
+        inputElement?.parentElement?.classList.add("text-white");
+       
+
+      }else{
+        inputElement?.parentElement?.classList.remove("bg-blue-800");
+        inputElement?.parentElement?.classList.remove("text-white");
+      }
+
+    }
+    console.log("resultsToDisplay is ",resultsToDisplay);
+
+    }
   
 
 
@@ -75,6 +116,7 @@ export default function GenerateTool() {
 
     if (target.type === 'radio') {
         console.log("radio fired");
+
         const newObject = {...addNewRadioValue(target.name.toString(), target.value.toString(), resultsToDisplay)};
         setResultsToDisplay(newObject);
         
@@ -93,53 +135,11 @@ export default function GenerateTool() {
         }
     }
 
-    // console.log("changeEvent is", changeEvent);
-    // console.log(target.parentElement);
-    // if (target.parentElement===null){
-    // }else{
-    //   console.log("LOOK HERE ",target.parentElement.parentElement.children);
-    //   target.parentElement.classList.toggle("bg-blue-800");
-    //   console.log(target.parentElement.classList);
-    // }
-
-
-
-    // const formElement = document.querySelector("form");
-    // const formElementChildren = formElement?.children;
-
-    // if (formElementChildren!==undefined){
-    //   for (const element of formElementChildren ){
-    //     console.log(element);
-    //     if (element.checked){
-
-    //     }
-    //   }
-    // }
-
-    const inputElements = document.querySelectorAll("input");
-    for (const inputElement of inputElements ){
-      if(inputElement.checked){
-        inputElement?.parentElement?.classList.add("bg-blue-800");
-        inputElement?.parentElement?.classList.add("text-white");
-       
-
-      }else{
-        inputElement?.parentElement?.classList.remove("bg-blue-800");
-        inputElement?.parentElement?.classList.remove("text-white");
-      }
-
-    }
-
-  
-
     
-
-
-    console.log("resultsToDisplay is ",resultsToDisplay);
   }
   return (
     <div  className="flex justify-around bg-blue-100 " >
-        <Form  handleChange = {handleChange} resultsToDisplay={resultsToDisplay}  />
+        <Form  handleChange = {handleChange} handleClick={handleClick} resultsToDisplay={resultsToDisplay}  />
         {/* {resultsToDisplay && Object.keys(resultsToDisplay).forEach(function(key, index))) (
           <h3 key={index}> {resultsToDisplay[key]} </h3>
         )} */}

@@ -4,11 +4,12 @@ import AreThereAnyNeurologicalSignsAssociated from "./questions/AreThereAnyNeuro
 
 type formProps = {
     handleChange: (changeEvent: React.SyntheticEvent)=>void;
+    handleClick: (clickEvent: React.SyntheticEvent)=>void;
     resultsToDisplay: {[questionName: string]: string[]};
 
 }
 
-const Form = ({handleChange, resultsToDisplay}:formProps) => {
+const Form = ({handleChange, handleClick, resultsToDisplay}:formProps) => {
 
     const isOptionSelected = ( option: string, questionNameToCheck:string) => {
         const questionValue: string[]|undefined = resultsToDisplay[questionNameToCheck];
@@ -30,7 +31,11 @@ const Form = ({handleChange, resultsToDisplay}:formProps) => {
             <form onChange={(e)=> {
                 // console.log(e.target.name);
                 handleChange(e);
-                }}>
+                }}
+                onClick={(e)=> {
+                    handleClick(e);
+                    }}
+                >
 
                 <WhatIsTheNatureOfPain parentQuestionPath={"What is the nature of pain?"} isOptionSelected={isOptionSelected} />
                 <WhereIsThePainLocated  parentQuestionPath={"Where is the pain located?"} isOptionSelected={isOptionSelected}  />
