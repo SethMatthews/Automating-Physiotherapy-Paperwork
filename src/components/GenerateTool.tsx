@@ -33,10 +33,17 @@ export default function GenerateTool() {
 
   const addNewQuestion = (questionName: string, initialValue: string, resultsToDisplay:{[questionName: string]: string[]}) =>{
 
-    const newResultsToDisplay = resultsToDisplay;
+    const newResultsToDisplay = {...resultsToDisplay};
     newResultsToDisplay[questionName]=[initialValue];
     return newResultsToDisplay;
   }
+
+  const removeQuestion = (questionName: string, resultsToDisplay:{[questionName: string]: string[]}) =>{
+    const newResultsToDisplay = {...resultsToDisplay};
+    delete newResultsToDisplay[questionName];
+    return newResultsToDisplay;
+  }
+
 
 
   //removeCheckboxValue function 
@@ -62,24 +69,37 @@ export default function GenerateTool() {
     // }
     const newResultsToDisplay = resultsToDisplay;
     newResultsToDisplay[questionName] = [value];
+
     return newResultsToDisplay;
   }
   
 
 
-
-  
-
   const handleChange = (changeEvent: React.SyntheticEvent) => {
     const target = changeEvent.target as HTMLInputElement;
 
     if (target.type === 'radio') {
-        console.log("radio fired");
-        const newObject = {...addNewRadioValue(target.name.toString(), target.value.toString(), resultsToDisplay)};
-        setResultsToDisplay(newObject);
-        
+      console.log("radio fired");
+      let newObject = {...resultsToDisplay};
 
+      console.log("CHECKING IF QUESTIONS NEED DELETING");
+      console.log("keys to check ", Object.keys(newObject));
+      console.log("key we are looking for ", target.name.toString() );
+      const keysToDelete= Object.keys(newObject).filter((key)=>{
+        console.log(key.includes( target.name.toString()));
+        return key.includes( target.name.toString()) && key !==target.name.toString() ;
+      });
+      console.log("keysToDelete",keysToDelete);
+      keysToDelete.map((keyToRemove)=>{
+        console.log("OBJECTBEFORE",newObject );
+        console.log("keyToRemove",keyToRemove);
+        delete newObject[keyToRemove];
+        console.log("OBJECTAFTER",newObject );
+      });
+      const objectWithdNewRadioValue =  {...addNewRadioValue(target.name.toString(), target.value.toString(), newObject)};
+      setResultsToDisplay(objectWithdNewRadioValue);
     }
+
     if (target.type === 'checkbox') {
         console.log("checkbox fired");
         if (target.checked){
@@ -93,48 +113,16 @@ export default function GenerateTool() {
         }
     }
 
-    // console.log("changeEvent is", changeEvent);
-    // console.log(target.parentElement);
-    // if (target.parentElement===null){
-    // }else{
-    //   console.log("LOOK HERE ",target.parentElement.parentElement.children);
-    //   target.parentElement.classList.toggle("bg-blue-800");
-    //   console.log(target.parentElement.classList);
-    // }
-
-
-
-    // const formElement = document.querySelector("form");
-    // const formElementChildren = formElement?.children;
-
-    // if (formElementChildren!==undefined){
-    //   for (const element of formElementChildren ){
-    //     console.log(element);
-    //     if (element.checked){
-
-    //     }
-    //   }
-    // }
-
     const inputElements = document.querySelectorAll("input");
     for (const inputElement of inputElements ){
       if(inputElement.checked){
         inputElement?.parentElement?.classList.add("bg-blue-800");
         inputElement?.parentElement?.classList.add("text-white");
-       
-
       }else{
         inputElement?.parentElement?.classList.remove("bg-blue-800");
         inputElement?.parentElement?.classList.remove("text-white");
       }
-
     }
-
-  
-
-    
-
-
     console.log("resultsToDisplay is ",resultsToDisplay);
   }
   return (
