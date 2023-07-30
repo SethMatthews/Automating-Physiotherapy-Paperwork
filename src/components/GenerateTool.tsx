@@ -38,11 +38,11 @@ export default function GenerateTool() {
     return newResultsToDisplay;
   }
 
-  const removeQuestion = (questionName: string, resultsToDisplay:{[questionName: string]: string[]}) =>{
-    const newResultsToDisplay = {...resultsToDisplay};
-    delete newResultsToDisplay[questionName];
-    return newResultsToDisplay;
-  }
+  // const removeQuestion = (questionName: string, resultsToDisplay:{[questionName: string]: string[]}) =>{
+  //   const newResultsToDisplay = {...resultsToDisplay};
+  //   delete newResultsToDisplay[questionName];
+  //   return newResultsToDisplay;
+  // }
 
 
 
@@ -80,7 +80,7 @@ export default function GenerateTool() {
 
     if (target.type === 'radio') {
       console.log("radio fired");
-      let newObject = {...resultsToDisplay};
+      const newObject = {...resultsToDisplay};
 
       console.log("CHECKING IF QUESTIONS NEED DELETING");
       console.log("keys to check ", Object.keys(newObject));
@@ -128,9 +128,6 @@ export default function GenerateTool() {
   return (
     <div  className="flex justify-around bg-blue-100 " >
         <Form  handleChange = {handleChange} resultsToDisplay={resultsToDisplay}  />
-        {/* {resultsToDisplay && Object.keys(resultsToDisplay).forEach(function(key, index))) (
-          <h3 key={index}> {resultsToDisplay[key]} </h3>
-        )} */}
 
         <div className=" text-gray-800 w-3/5 m-12 bg-white p-10 rounded-lg shadow-xl ">
     
@@ -178,21 +175,6 @@ export default function GenerateTool() {
                   </div>              
                 ))}
               </ul>
-
-              {/* Objective:
-              <ul className="outputSubjective2">
-
-              </ul>
-
-              Treatment:
-              <ul className="outputSubjective3">
-
-              </ul>
-
-              Plan:
-              <ul className="outputSubjective4">
-
-              </ul> */}
 
               <br/>
               <br/>
