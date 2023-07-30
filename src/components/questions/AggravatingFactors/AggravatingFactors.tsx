@@ -21,7 +21,6 @@ const AggravatingFactors = ({parentQuestionPath, isOptionSelected}:{parentQuesti
             <AggravatingFactorsOptions selectedOption="Other please specific" parentQuestionPath={parentQuestionPath}  />
 
             
-
             {/* <OptionConstantIntermittent selectedOption="Yes" parentQuestionPath={parentQuestionPath}  isOptionSelected={isOptionSelected} /> */}
         </div>
     );

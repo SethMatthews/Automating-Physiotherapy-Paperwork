@@ -2,6 +2,7 @@ import WhatIsTheNatureOfPain from "./WhatIsTheNatureOfPain";
 import WhereIsThePainLocated from "./questions/ WhereIsThePainLocated/WhereIsThePainLocated";
 import AggravatingFactors from "./questions/AggravatingFactors/AggravatingFactors";
 import AreThereAnyNeurologicalSignsAssociated from "./questions/AreThereAnyNeurologicalSignsAssociated/AreThereAnyNeurologicalSignsAssociated";
+import EasingFactors from "./questions/EasingFactors/EasingFactors";
 
 type formProps = {
     handleChange: (changeEvent: React.SyntheticEvent)=>void;
@@ -39,6 +40,10 @@ const Form = ({handleChange, resultsToDisplay}:formProps) => {
                 <AreThereAnyNeurologicalSignsAssociated  parentQuestionPath={"Are there any neurological signs associated?"} isOptionSelected={isOptionSelected}  />
 
                 <AggravatingFactors parentQuestionPath="Aggravating factors?" isOptionSelected={isOptionSelected} />
+
+                <EasingFactors parentQuestionPath="Easing factors?" isOptionSelected={isOptionSelected} />
+                
+
             </form>
         </div>
     );
