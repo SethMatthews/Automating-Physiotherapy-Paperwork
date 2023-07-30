@@ -114,27 +114,30 @@ export default function GenerateTool() {
           //need to remove nested values here for edge cases
           const rootPathToPrune = `${target.name.toString()}-${target.value.toString()}`;
 
-          // console.log("CHECKING IF QUESTIONS NEED DELETING");
-          // console.log("keys to check ", Object.keys(newObject));
-          // console.log("key we are looking for ", rootPathToPrune );
-          // const keysToDelete= Object.keys(newObject).filter((key)=>{
-          //   console.log(key.includes(rootPathToPrune));
-          //   return key.includes( rootPathToPrune) && key !== rootPathToPrune ;
-          // });
-
-          Object.keys(newObject).map((key)=>{
-            if (key.includes( rootPathToPrune) && key !== rootPathToPrune){
-              delete newObject[key];
-            }
+          console.log("CHECKING IF QUESTIONS NEED DELETING");
+          console.log("keys to check ", Object.keys(newObject));
+          console.log("key we are looking for ", rootPathToPrune );
+          const keysToDelete= Object.keys(newObject).filter((key)=>{
+            console.log(key.includes(rootPathToPrune));
+            return key.includes( rootPathToPrune);
+            // return key.includes( rootPathToPrune) && key !== rootPathToPrune ;
           });
-          // console.log("keysToDelete",keysToDelete);
-          // keysToDelete.map((keyToRemove)=>{
-          //   console.log("OBJECTBEFORE",newObject );
-          //   console.log("keyToRemove",keyToRemove);
-          //   delete newObject[keyToRemove];
-          //   console.log("OBJECTAFTER",newObject );
-          // });
 
+
+          console.log("keysToDelete",keysToDelete);
+          keysToDelete.map((keyToRemove)=>{
+            console.log("OBJECTBEFORE",newObject );
+            console.log("keyToRemove",keyToRemove);
+            delete newObject[keyToRemove];
+            console.log("OBJECTAFTER",newObject );
+          });
+          
+          // Object.keys(newObject).map((key)=>{
+          //   if (key.includes( rootPathToPrune) && key !== rootPathToPrune){
+          //     delete newObject[key];
+          //   }
+          // });
+    
           setResultsToDisplay({...newObject});
         }
     }
