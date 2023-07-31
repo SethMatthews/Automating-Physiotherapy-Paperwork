@@ -16,7 +16,7 @@ const WhatIsTheNatureOfPainOptionAcute = ({parentQuestionPath, isOptionSelected}
                 <div className="ml-10">
                     <h3 className="mt-3 mb-3">How long have been experiencing low back pain?</h3>
 
-                    <label htmlFor="number">Experiencing low back pain for </label>
+                    {/* <label htmlFor="number">Experiencing low back pain for </label>
                     <select name="number" id="number">
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -34,7 +34,7 @@ const WhatIsTheNatureOfPainOptionAcute = ({parentQuestionPath, isOptionSelected}
                         <option value="weeks">Weeks</option>
                         <option value="months">Months</option>
                         <option value="years">Years</option>
-                    </select>
+                    </select> */}
 
 
                     <RadioInputOption text="Days" value="Days" questionName={currentQuestionPath}/>
