@@ -3,8 +3,6 @@ import NeurologicalSignsAssociatedOptionNo from "../AreThereAnyNeurologicalSigns
 import PainWorseOptionMorning from "./PainWorseOptionMorning";
 import PainWorseOptionNight from "./PainWorseOptionNight";
 
-
-
 type isOptionSelectedType = (option: string, questionNameToCheck: string) => boolean;
 
 const WhenIsThePainWorse = ({parentQuestionPath, isCheckboxOptionSelected}:{parentQuestionPath: string, isCheckboxOptionSelected: isOptionSelectedType}) => {
@@ -15,9 +13,7 @@ const WhenIsThePainWorse = ({parentQuestionPath, isCheckboxOptionSelected}:{pare
             <PainWorseOptionMorning selectedOption="Mornings" parentQuestionPath={parentQuestionPath} isCheckboxOptionSelected={isCheckboxOptionSelected}   />
             <NeurologicalSignsAssociatedOptionNo selectedOption="Throughout the day" parentQuestionPath={parentQuestionPath}  />
             <PainWorseOptionNight  selectedOption="Night time" parentQuestionPath={parentQuestionPath} isCheckboxOptionSelected={isCheckboxOptionSelected} />
-           
         </div>
     );
 }
- 
 export default WhenIsThePainWorse;

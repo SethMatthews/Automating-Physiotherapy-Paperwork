@@ -1,8 +1,5 @@
 import CheckboxInput from "~/components/CheckboxInput";
 
-
-
-
 const AggravatingFactorsOptions = ({selectedOption, parentQuestionPath}:{selectedOption:string , parentQuestionPath: string}) => {
 
 

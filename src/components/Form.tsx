@@ -1,6 +1,7 @@
 import WhatIsTheNatureOfPain from "./WhatIsTheNatureOfPain";
 import WhereIsThePainLocated from "./questions/ WhereIsThePainLocated/WhereIsThePainLocated";
 import AggravatingFactors from "./questions/AggravatingFactors/AggravatingFactors";
+import AnyRedFlags from "./questions/AnyRedFlags/AnyRedFlags";
 import AreThereAnyNeurologicalSignsAssociated from "./questions/AreThereAnyNeurologicalSignsAssociated/AreThereAnyNeurologicalSignsAssociated";
 import EasingFactors from "./questions/EasingFactors/EasingFactors";
 import WhenIsThePainWorse from "./questions/WhenIsThePainWorse/WhenIsThePainWorse";
@@ -55,6 +56,8 @@ const Form = ({handleChange, resultsToDisplay}:formProps) => {
                 <EasingFactors parentQuestionPath="Easing factors?"  isCheckboxOptionSelected={isCheckboxOptionSelected} />
 
                 <WhenIsThePainWorse parentQuestionPath="When is the pain worse?" isCheckboxOptionSelected={isCheckboxOptionSelected} />
+
+                <AnyRedFlags  parentQuestionPath="Any red flags?" isCheckboxOptionSelected={isCheckboxOptionSelected} />
                 
 
             </form>
