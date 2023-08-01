@@ -3,6 +3,7 @@ import WhereIsThePainLocated from "./questions/ WhereIsThePainLocated/WhereIsThe
 import AggravatingFactors from "./questions/AggravatingFactors/AggravatingFactors";
 import AreThereAnyNeurologicalSignsAssociated from "./questions/AreThereAnyNeurologicalSignsAssociated/AreThereAnyNeurologicalSignsAssociated";
 import EasingFactors from "./questions/EasingFactors/EasingFactors";
+import WhenIsThePainWorse from "./questions/WhenIsThePainWorse/WhenIsThePainWorse";
 
 type formProps = {
     handleChange: (changeEvent: React.SyntheticEvent)=>void;
@@ -52,6 +53,8 @@ const Form = ({handleChange, resultsToDisplay}:formProps) => {
                 <AggravatingFactors parentQuestionPath="Aggravating factors?" isCheckboxOptionSelected={isCheckboxOptionSelected} />
 
                 <EasingFactors parentQuestionPath="Easing factors?"  isCheckboxOptionSelected={isCheckboxOptionSelected} />
+
+                <WhenIsThePainWorse parentQuestionPath="When is the pain worse?" isCheckboxOptionSelected={isCheckboxOptionSelected} />
                 
 
             </form>
