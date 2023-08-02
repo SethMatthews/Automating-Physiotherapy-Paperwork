@@ -41,7 +41,7 @@ const Form = ({handleChange, resultsToDisplay}:formProps) => {
 
 
     return (  
-        <div className=" text-gray-500 w-2/5 m-12  bg-white p-10 rounded-lg shadow-xl">
+        <div className=" text-gray-500 bg-white p-10 rounded-lg shadow-xl   md:w-2/5 m-12 w-full ">
             <form onChange={(e)=> {
                 // console.log(e.target.name);
                 handleChange(e);
