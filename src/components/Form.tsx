@@ -4,6 +4,7 @@ import AggravatingFactors from "./questions/AggravatingFactors/AggravatingFactor
 import AnyRedFlags from "./questions/AnyRedFlags/AnyRedFlags";
 import AreThereAnyNeurologicalSignsAssociated from "./questions/AreThereAnyNeurologicalSignsAssociated/AreThereAnyNeurologicalSignsAssociated";
 import EasingFactors from "./questions/EasingFactors/EasingFactors";
+import PastMedicalHistory from "./questions/PastMedicalHistory/PastMedicalHistory";
 import WhenIsThePainWorse from "./questions/WhenIsThePainWorse/WhenIsThePainWorse";
 
 type formProps = {
@@ -58,6 +59,8 @@ const Form = ({handleChange, resultsToDisplay}:formProps) => {
                 <WhenIsThePainWorse parentQuestionPath="When is the pain worse?" isCheckboxOptionSelected={isCheckboxOptionSelected} />
 
                 <AnyRedFlags  parentQuestionPath="Any red flags?" isCheckboxOptionSelected={isCheckboxOptionSelected} />
+                <PastMedicalHistory  parentQuestionPath="Past medical history" isCheckboxOptionSelected={isCheckboxOptionSelected} />
+                
                 
 
             </form>
