@@ -166,10 +166,10 @@ export default function GenerateTool() {
     console.log("resultsToDisplay is ",resultsToDisplay);
   }
   return (
-    <div  className="flex flex-col items-center w-full px-4 md:flex-row md:justify-around md:items-start bg-blue-100  " >
+    <div  className="flex flex-col items-center w-full px-4 md:flex-row md:justify-around md:items-start bg-blue-100 " >
         <Form  handleChange = {handleChange} handleClick = {handleClick} resultsToDisplay={resultsToDisplay}  />
 
-        <div className=" text-gray-800 bg-white p-10 rounded-lg shadow-xl w-full md:w-3/5 m-12 ">
+        <div className=" text-gray-800 bg-white p-10 rounded-lg shadow-xl w-full md:w-3/5 m-12 md:top-0 md:sticky md:overflow-y-scroll  ">
     
           <div className="flex justify-end ">
             <button className="p-4 rounded-2xl bg-slate-100 shadow-lg"  onClick={(event)=>{
