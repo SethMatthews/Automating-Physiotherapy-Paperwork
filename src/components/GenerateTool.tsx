@@ -71,9 +71,32 @@ export default function GenerateTool() {
     return newResultsToDisplay;
   }
 
-  
-  
+  const handleClick = (clickEvent: React.SyntheticEvent) => {
+    const target = clickEvent.target  as HTMLElement;
+    console.log("onClick is  ",target);
+    console.log("ClickEvent is  ",clickEvent);
+    if (target?.id ==="input"){
+        console.log("TRUE INPUT");
+        const childrenElements = target.children;
+        const childInputElement = childrenElements[0] as HTMLInputElement ;
+        // childInputElement.checked = true;
+        childInputElement.click();
+    }
+
+    const inputElements = document.querySelectorAll("input");
+    for (const inputElement of inputElements ){
+        if(inputElement.checked){
+            inputElement?.parentElement?.classList.add("bg-blue-800");
+            inputElement?.parentElement?.classList.add("text-white");
+        }else{
+            inputElement?.parentElement?.classList.remove("bg-blue-800");
+            inputElement?.parentElement?.classList.remove("text-white");
+        }
+    }
+  }
+
   const handleChange = (changeEvent: React.SyntheticEvent) => {
+
     const target = changeEvent.target as HTMLInputElement;
 
     if (target.type === 'radio') {
@@ -138,23 +161,13 @@ export default function GenerateTool() {
     
           setResultsToDisplay({...newObject});
         }
-    }
+  }
 
-    const inputElements = document.querySelectorAll("input");
-    for (const inputElement of inputElements ){
-      if(inputElement.checked){
-        inputElement?.parentElement?.classList.add("bg-blue-800");
-        inputElement?.parentElement?.classList.add("text-white");
-      }else{
-        inputElement?.parentElement?.classList.remove("bg-blue-800");
-        inputElement?.parentElement?.classList.remove("text-white");
-      }
-    }
     console.log("resultsToDisplay is ",resultsToDisplay);
   }
   return (
     <div  className="flex flex-col items-center w-full px-4 md:flex-row md:justify-around md:items-start bg-blue-100  " >
-        <Form  handleChange = {handleChange} resultsToDisplay={resultsToDisplay}  />
+        <Form  handleChange = {handleChange} handleClick = {handleClick} resultsToDisplay={resultsToDisplay}  />
 
         <div className=" text-gray-800 bg-white p-10 rounded-lg shadow-xl w-full md:w-3/5 m-12 ">
     
