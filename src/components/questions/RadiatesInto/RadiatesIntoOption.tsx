@@ -1,5 +1,6 @@
-import RadioInputOption from "~/components/RadioInput";
+
 import OptionConstantIntermittent from "./OptionConstantIntermittent";
+import CheckboxInput from "~/components/CheckboxInput";
 
 type isOptionSelectedType = (option: string, questionNameToCheck: string) => boolean;
 
@@ -10,7 +11,7 @@ const RadiatesIntoOption = ({ painLocation, parentQuestionPath, isOptionSelected
 
     return (  
         <div>
-            <RadioInputOption text={selectedOption} value={selectedOption} questionName={parentQuestionPath}/>
+            <CheckboxInput text={selectedOption} value={selectedOption} questionName={parentQuestionPath}/>
             {isOptionSelected(selectedOption,parentQuestionPath) && 
                 <div className="ml-10">
                     {/* <h3 className="mt-3 mb-3">How long have been experiencing low back pain?</h3> */}

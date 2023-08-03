@@ -1,4 +1,4 @@
-import WhatIsTheNatureOfPain from "./WhatIsTheNatureOfPain";
+// import WhatIsTheNatureOfPain from "./WhatIsTheNatureOfPain";
 import WhereIsThePainLocated from "./questions/ WhereIsThePainLocated/WhereIsThePainLocated";
 import AggravatingFactors from "./questions/AggravatingFactors/AggravatingFactors";
 import AnyRedFlags from "./questions/AnyRedFlags/AnyRedFlags";
@@ -20,6 +20,10 @@ const Form = ({handleChange, handleClick,  resultsToDisplay}:formProps) => {
         const questionValue: string[]|undefined = resultsToDisplay[questionNameToCheck];
         if (questionValue===undefined){
             return false
+
+        } else if (questionValue.length>1){
+            const questionValues: string[]|undefined = resultsToDisplay[questionNameToCheck];
+            return questionValues?.includes(option);
 
         } else {
             console.log("questionValue[0] ",questionValue[0]);
