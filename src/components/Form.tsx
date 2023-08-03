@@ -22,7 +22,7 @@ const Form = ({handleChange, handleClick,  resultsToDisplay}:formProps) => {
             return false
 
         } else if (questionValue.length>1){
-            const questionValues: string[]|undefined = resultsToDisplay[questionNameToCheck];
+            const questionValues: string[] = resultsToDisplay[questionNameToCheck] as string[];
             return questionValues?.includes(option);
 
         } else {
