@@ -1,10 +1,12 @@
 // import WhatIsTheNatureOfPain from "./WhatIsTheNatureOfPain";
+import WhatIsTheNatureOfPain from "./WhatIsTheNatureOfPain";
 import WhereIsThePainLocated from "./questions/ WhereIsThePainLocated/WhereIsThePainLocated";
 import AggravatingFactors from "./questions/AggravatingFactors/AggravatingFactors";
 import AnyRedFlags from "./questions/AnyRedFlags/AnyRedFlags";
 import AreThereAnyNeurologicalSignsAssociated from "./questions/AreThereAnyNeurologicalSignsAssociated/AreThereAnyNeurologicalSignsAssociated";
 import EasingFactors from "./questions/EasingFactors/EasingFactors";
 import PastMedicalHistory from "./questions/PastMedicalHistory/PastMedicalHistory";
+import WhatIsTheNatureOfPainNew from "./questions/WhatIsTheNatureOfPain/WhatIsTheNatureOfPainNew";
 import WhenIsThePainWorse from "./questions/WhenIsThePainWorse/WhenIsThePainWorse";
 
 type formProps = {
@@ -55,7 +57,10 @@ const Form = ({handleChange, handleClick,  resultsToDisplay}:formProps) => {
                 
                 >
 
+                <WhatIsTheNatureOfPainNew  parentQuestionPath={"What is the nature of pain?"} isOptionSelected={isOptionSelected}  />
+
                 {/* <WhatIsTheNatureOfPain parentQuestionPath={"What is the nature of pain?"} isOptionSelected={isOptionSelected} /> */}
+
                 <WhereIsThePainLocated  parentQuestionPath={"Where is the pain located?"} isOptionSelected={isOptionSelected}  />
 
                 <AreThereAnyNeurologicalSignsAssociated  parentQuestionPath={"Are there any neurological signs associated?"} isOptionSelected={isOptionSelected}  />
