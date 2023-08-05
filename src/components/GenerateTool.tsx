@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Form from './Form';
 
+import Image from 'next/image'
+
 
 
 export default function GenerateTool() {
@@ -187,7 +189,7 @@ export default function GenerateTool() {
         <div className=" text-gray-800 bg-white p-10 rounded-lg shadow-xl w-full md:w-3/5 m-12 md:top-0 md:sticky md:overflow-y-scroll  md:max-h-screen  ">
     
           <div className="flex justify-end ">
-            <button className="p-4 rounded-2xl bg-slate-100 shadow-lg"  onClick={(event)=>{
+            <button className="p-2 rounded-xl hover:bg-gray-100"  onClick={(event)=>{
               console.log("Click Event",event );
               const output = document.querySelector(".output-div");
               console.log(output?.textContent);
@@ -202,7 +204,7 @@ export default function GenerateTool() {
                 });
 
             }}>
-              Copy
+              <Image src={"/copyIcon.svg"} alt='copy icon'  height={28} width={28} />
             </button>
             </div>
             <div className="output-div">
