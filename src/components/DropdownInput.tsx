@@ -9,7 +9,7 @@ const DropdownInput= ({selectedOption, parentQuestionPath, isOptionSelected}:{se
     return ( 
             <div>
                 <div  id="input" className="m-1 border-gray-100 border-2 rounded-md py-3 px-1 hover:shadow-lg">
-                    <select className="ml-3" name={parentQuestionPath} id={parentQuestionPath}>
+                    <select className="ml-3 rounded-sm" name={parentQuestionPath} id={parentQuestionPath}>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
