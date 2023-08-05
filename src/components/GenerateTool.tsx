@@ -97,9 +97,19 @@ export default function GenerateTool() {
 
   const handleChange = (changeEvent: React.SyntheticEvent) => {
 
+    console.log("EVENT IS ", changeEvent);
+
     const target = changeEvent.target as HTMLInputElement;
 
-    if (target.type === 'radio') {
+    if (target.type === "select-one"){
+      console.log("DROPDOWN TRIGGERED ",changeEvent );
+      console.log("DROPDOWN name ",target.name );
+      console.log("DROPDOWN TRIGGERED ",target.value );
+
+
+    }
+
+    if (target.type === 'radio'||target.type === "select-one") {
       console.log("radio fired");
       const newObject = {...resultsToDisplay};
 

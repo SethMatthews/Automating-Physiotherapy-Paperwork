@@ -1,14 +1,89 @@
-2023-08-03T22:58:46.121Z   +424ms [debug] Config loaded {"version":"2.18.2","cdkVersion":"2.84.0","constructsVersion":"10.1.156","config":{"name":"first-t3","region":"us-east-1","stage":"dev","ssmPrefix":"/sst/first-t3/dev/"},"metafile":{"inputs":{"sst.config.ts":{"bytes":212,"imports":[{"path":"sst","kind":"import-statement","external":true},{"path":"sst/constructs","kind":"import-statement","external":true}]}},"outputs":{".sst.config.1691103526055.mjs":{"imports":[],"exports":["default"],"entryPoint":"sst.config.ts","inputs":{"sst.config.ts":{"bytesInOutput":123}},"bytes":305}}},"paths":{"config":"/Users/sethmatthews/Documents/github-repos/t3-stack-first/first-t3/sst.config.ts","root":"/Users/sethmatthews/Documents/github-repos/t3-stack-first/first-t3","out":"/Users/sethmatthews/Documents/github-repos/t3-stack-first/first-t3/.sst","artifacts":"/Users/sethmatthews/Documents/github-repos/t3-stack-first/first-t3/.sst/artifacts"}}
-2023-08-03T22:58:47.407Z  +1286ms [debug] Using AWS profile 
-2023-08-03T22:58:47.432Z    +25ms [debug] Created AWS client IoTClient
-2023-08-03T22:58:47.432Z     +0ms [debug] Getting IoT endpoint
-2023-08-03T22:58:48.289Z   +857ms [debug] Using IoT endpoint: a3lq4g5xb5ab4j-ats.iot.us-east-1.amazonaws.com
-2023-08-03T22:58:48.289Z     +0ms [debug] Initializing bootstrap context
-2023-08-03T22:58:48.291Z     +2ms [debug] Created AWS client CloudFormationClient
-2023-08-03T22:58:49.343Z  +1052ms [debug] Loaded bootstrap status
-2023-08-03T22:58:49.344Z     +1ms [debug] Bootstrap context initialized {"version":"7.2","bucket":"sstbootstrap-useast124d14e4b-1cmm8wfzxx22u"}
-2023-08-03T22:58:49.346Z     +2ms [debug] Created AWS client S3Client
-2023-08-03T22:58:49.394Z    +48ms [debug] Fetching all metadata
-2023-08-03T22:58:50.371Z   +977ms [debug] Fetched metadata from 0 stacks
-2023-08-03T22:58:50.374Z     +3ms [debug] Created AWS client SSMClient
-2023-08-03T22:58:50.718Z   +344ms [debug] IoT connected
+2023-08-04T02:27:36.726Z   +459ms [debug] Config loaded {"version":"2.18.2","cdkVersion":"2.84.0","constructsVersion":"10.1.156","config":{"name":"first-t3","region":"us-east-1","stage":"dev","ssmPrefix":"/sst/first-t3/dev/"},"metafile":{"inputs":{"sst.config.ts":{"bytes":212,"imports":[{"path":"sst","kind":"import-statement","external":true},{"path":"sst/constructs","kind":"import-statement","external":true}]}},"outputs":{".sst.config.1691116056647.mjs":{"imports":[],"exports":["default"],"entryPoint":"sst.config.ts","inputs":{"sst.config.ts":{"bytesInOutput":123}},"bytes":305}}},"paths":{"config":"/Users/sethmatthews/Documents/github-repos/t3-stack-first/first-t3/sst.config.ts","root":"/Users/sethmatthews/Documents/github-repos/t3-stack-first/first-t3","out":"/Users/sethmatthews/Documents/github-repos/t3-stack-first/first-t3/.sst","artifacts":"/Users/sethmatthews/Documents/github-repos/t3-stack-first/first-t3/.sst/artifacts"}}
+2023-08-04T02:27:37.982Z  +1256ms [debug] Using AWS profile 
+2023-08-04T02:27:38.006Z    +24ms [debug] Created AWS client IoTClient
+2023-08-04T02:27:38.006Z     +0ms [debug] Getting IoT endpoint
+2023-08-04T02:27:38.872Z   +866ms [debug] Using IoT endpoint: a3lq4g5xb5ab4j-ats.iot.us-east-1.amazonaws.com
+2023-08-04T02:27:38.873Z     +1ms [debug] Initializing bootstrap context
+2023-08-04T02:27:38.876Z     +3ms [debug] Created AWS client CloudFormationClient
+2023-08-04T02:27:40.086Z  +1210ms [debug] Loaded bootstrap status
+2023-08-04T02:27:40.087Z     +1ms [debug] Bootstrap context initialized {"version":"7.2","bucket":"sstbootstrap-useast124d14e4b-1cmm8wfzxx22u"}
+2023-08-04T02:27:40.088Z     +1ms [debug] Created AWS client S3Client
+2023-08-04T02:27:40.127Z    +39ms [debug] Fetching all metadata
+2023-08-04T02:27:41.265Z  +1138ms [debug] Fetched metadata from 0 stacks
+2023-08-04T02:27:41.267Z     +2ms [debug] Created AWS client SSMClient
+2023-08-04T02:27:41.524Z   +257ms [debug] IoT connected
+2023-08-04T03:25:10.966Z +3449442ms [debug] IoT closed
+2023-08-04T03:25:11.955Z   +989ms [debug] IoT reconnected
+2023-08-04T03:25:13.419Z  +1464ms [debug] IoT connected
+2023-08-04T03:57:28.758Z +1935339ms [debug] IoT closed
+2023-08-04T03:57:29.760Z  +1002ms [debug] IoT reconnected
+2023-08-04T03:57:31.181Z  +1421ms [debug] IoT connected
+2023-08-04T04:29:32.242Z +1921061ms [debug] IoT closed
+2023-08-04T04:29:33.244Z  +1002ms [debug] IoT reconnected
+2023-08-04T04:29:34.605Z  +1361ms [debug] IoT connected
+2023-08-04T05:47:22.123Z +4667518ms [debug] IoT closed
+2023-08-04T05:47:23.125Z  +1002ms [debug] IoT reconnected
+2023-08-04T05:47:24.553Z  +1428ms [debug] IoT connected
+2023-08-04T07:04:27.582Z +4623029ms [debug] IoT closed
+2023-08-04T07:04:28.582Z  +1000ms [debug] IoT reconnected
+2023-08-04T07:04:29.868Z  +1286ms [debug] IoT connected
+2023-08-04T08:33:32.403Z +5342535ms [debug] IoT closed
+2023-08-04T08:33:33.404Z  +1001ms [debug] IoT reconnected
+2023-08-04T08:33:34.991Z  +1587ms [debug] IoT connected
+2023-08-04T10:54:25.925Z +8450934ms [debug] IoT closed
+2023-08-04T10:54:26.926Z  +1001ms [debug] IoT reconnected
+2023-08-04T10:54:28.398Z  +1472ms [debug] IoT connected
+2023-08-04T11:27:29.071Z +1980673ms [debug] IoT closed
+2023-08-04T11:27:30.074Z  +1002ms [debug] IoT reconnected
+2023-08-04T11:27:31.562Z  +1489ms [debug] IoT connected
+2023-08-04T11:49:22.019Z +1310457ms [debug] IoT closed
+2023-08-04T11:49:23.018Z   +999ms [debug] IoT reconnected
+2023-08-04T11:49:24.270Z  +1252ms [debug] IoT connected
+2023-08-04T12:08:14.681Z +1130411ms [debug] IoT closed
+2023-08-04T12:08:15.683Z  +1002ms [debug] IoT reconnected
+2023-08-04T12:08:17.232Z  +1549ms [debug] IoT connected
+2023-08-04T13:23:23.153Z +4505921ms [debug] IoT closed
+2023-08-04T13:23:24.152Z   +999ms [debug] IoT reconnected
+2023-08-04T13:23:25.443Z  +1291ms [debug] IoT connected
+2023-08-04T13:43:55.387Z +1229944ms [debug] IoT closed
+2023-08-04T13:43:56.388Z  +1001ms [debug] IoT reconnected
+2023-08-04T13:43:57.822Z  +1434ms [debug] IoT connected
+2023-08-04T14:30:30.662Z +2792840ms [debug] IoT closed
+2023-08-04T14:30:31.661Z   +999ms [debug] IoT reconnected
+2023-08-04T14:30:33.262Z  +1601ms [debug] IoT connected
+2023-08-04T15:05:06.657Z +2073394ms [debug] IoT closed
+2023-08-04T15:05:07.658Z  +1002ms [debug] IoT reconnected
+2023-08-04T15:05:09.306Z  +1648ms [debug] IoT connected
+2023-08-04T15:37:44.094Z +1954788ms [debug] IoT closed
+2023-08-04T15:37:45.095Z  +1001ms [debug] IoT reconnected
+2023-08-04T15:37:46.412Z  +1317ms [debug] IoT connected
+2023-08-04T16:11:48.459Z +2042047ms [debug] IoT closed
+2023-08-04T16:11:49.460Z  +1001ms [debug] IoT reconnected
+2023-08-04T16:11:51.627Z  +2167ms [debug] IoT connected
+2023-08-04T16:33:00.075Z +1268448ms [debug] IoT closed
+2023-08-04T16:33:01.074Z   +999ms [debug] IoT reconnected
+2023-08-04T16:33:02.373Z  +1299ms [debug] IoT connected
+2023-08-04T17:45:31.669Z +4349296ms [debug] IoT closed
+2023-08-04T17:45:32.670Z  +1001ms [debug] IoT reconnected
+2023-08-04T17:45:33.962Z  +1292ms [debug] IoT connected
+2023-08-04T19:02:42.842Z +4628880ms [debug] IoT closed
+2023-08-04T19:02:43.844Z  +1002ms [debug] IoT reconnected
+2023-08-04T19:02:45.244Z  +1400ms [debug] IoT connected
+2023-08-04T20:30:44.765Z +5279521ms [debug] IoT closed
+2023-08-04T20:30:45.767Z  +1002ms [debug] IoT reconnected
+2023-08-04T20:30:47.746Z  +1979ms [debug] IoT connected
+2023-08-04T20:52:26.514Z +1298768ms [debug] IoT closed
+2023-08-04T20:52:27.512Z   +998ms [debug] IoT reconnected
+2023-08-04T20:52:28.769Z  +1257ms [debug] IoT connected
+2023-08-04T22:23:26.948Z +5458179ms [debug] IoT closed
+2023-08-04T22:23:27.880Z   +932ms [debug] IoT reconnected
+2023-08-04T22:23:29.236Z  +1356ms [debug] IoT connected
+2023-08-04T23:42:33.416Z +4744180ms [debug] IoT closed
+2023-08-04T23:42:34.414Z   +998ms [debug] IoT reconnected
+2023-08-04T23:42:35.725Z  +1311ms [debug] IoT connected
+2023-08-05T00:18:54.849Z +2179124ms [debug] IoT closed
+2023-08-05T00:18:55.853Z  +1004ms [debug] IoT reconnected
+2023-08-05T00:18:57.432Z  +1579ms [debug] IoT connected
+2023-08-05T00:39:57.983Z +1260551ms [debug] IoT closed
+2023-08-05T00:39:58.983Z  +1000ms [debug] IoT reconnected
+2023-08-05T00:40:00.312Z  +1329ms [debug] IoT connected

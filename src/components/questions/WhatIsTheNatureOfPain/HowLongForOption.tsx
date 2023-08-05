@@ -1,8 +1,6 @@
 // WhatIsTheNatureOfPainNew
 
-import RadioInputOption from "~/components/RadioInput";
-import HowLongFor from "./HowLongFor";
-import WasThereAnIncident from "./WasThereAnIncident";
+import DropdownInput from "~/components/DropdownInput";
 
 
 type isOptionSelectedType = (option: string, questionNameToCheck: string) => boolean;
@@ -12,12 +10,10 @@ const HowLongForOption = ({selectedOption, parentQuestionPath, isOptionSelected}
     const currentQuestionPath = parentQuestionPath+"-"+selectedOption;
     return (  
         <div>
-            <RadioInputOption text={selectedOption} value={selectedOption} questionName={parentQuestionPath}/>
-            {isOptionSelected(selectedOption,parentQuestionPath) && 
-                <div className="ml-10">
-                    <WasThereAnIncident isOptionSelected={isOptionSelected} parentQuestionPath={currentQuestionPath} />
-                </div>
-            }
+            {/* <RadioInputOption text={selectedOption} value={selectedOption} questionName={parentQuestionPath}/> */}
+            <DropdownInput  selectedOption={selectedOption} parentQuestionPath={currentQuestionPath} isOptionSelected={isOptionSelected} />
+
+            
         </div>
     );
 }
