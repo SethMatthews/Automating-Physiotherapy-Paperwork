@@ -1,5 +1,5 @@
 // import WhatIsTheNatureOfPain from "./WhatIsTheNatureOfPain";
-import WhatIsTheNatureOfPain from "./WhatIsTheNatureOfPain";
+
 import WhereIsThePainLocated from "./questions/ WhereIsThePainLocated/WhereIsThePainLocated";
 import AggravatingFactors from "./questions/AggravatingFactors/AggravatingFactors";
 import AnyRedFlags from "./questions/AnyRedFlags/AnyRedFlags";
