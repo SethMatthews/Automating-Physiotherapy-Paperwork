@@ -83,30 +83,18 @@ export default function GenerateTool() {
         childInputElement.click();
     }
 
-    const inputElements = document.querySelectorAll("input");
-    for (const inputElement of inputElements ){
-        if(inputElement.checked){
-            inputElement?.parentElement?.classList.add("bg-blue-800");
-            inputElement?.parentElement?.classList.add("text-white");
-        }else{
-            inputElement?.parentElement?.classList.remove("bg-blue-800");
-            inputElement?.parentElement?.classList.remove("text-white");
-        }
-    }
+    
   }
 
   const handleChange = (changeEvent: React.SyntheticEvent) => {
 
     console.log("EVENT IS ", changeEvent);
-
     const target = changeEvent.target as HTMLInputElement;
 
     if (target.type === "select-one"){
       console.log("DROPDOWN TRIGGERED ",changeEvent );
       console.log("DROPDOWN name ",target.name );
       console.log("DROPDOWN TRIGGERED ",target.value );
-
-
     }
 
     if (target.type === 'radio'||target.type === "select-one") {
@@ -153,8 +141,6 @@ export default function GenerateTool() {
             return key.includes( rootPathToPrune);
             // return key.includes( rootPathToPrune) && key !== rootPathToPrune ;
           });
-
-
           console.log("keysToDelete",keysToDelete);
           keysToDelete.map((keyToRemove)=>{
             console.log("OBJECTBEFORE",newObject );
@@ -162,16 +148,35 @@ export default function GenerateTool() {
             delete newObject[keyToRemove];
             console.log("OBJECTAFTER",newObject );
           });
-          
-          // Object.keys(newObject).map((key)=>{
-          //   if (key.includes( rootPathToPrune) && key !== rootPathToPrune){
-          //     delete newObject[key];
-          //   }
-          // });
-    
+
           setResultsToDisplay({...newObject});
         }
-  }
+    }
+    const inputElements = document.querySelectorAll("input");
+    for (const inputElement of inputElements ){
+        if(inputElement.checked){
+            inputElement?.parentElement?.classList.add("bg-blue-800");
+            inputElement?.parentElement?.classList.add("text-white");
+        }else{
+            inputElement?.parentElement?.classList.remove("bg-blue-800");
+            inputElement?.parentElement?.classList.remove("text-white");
+            
+        }
+    }
+
+    const selectElements = document.querySelectorAll("select");
+    for (const selectElement of selectElements ){
+        console.log("selectElement.selectedIndex ", selectElement.selectedIndex);
+        if(selectElement.selectedIndex !== 0){
+          selectElement?.parentElement?.classList.add("bg-blue-800");
+          selectElement?.parentElement?.classList.add("text-white");
+          selectElement?.classList.add("text-black");
+        }else{
+          selectElement?.parentElement?.classList.remove("bg-blue-800");
+          selectElement?.parentElement?.classList.remove("text-white");
+          selectElement?.classList.remove("text-black");
+        }
+    }
 
     console.log("resultsToDisplay is ",resultsToDisplay);
   }
