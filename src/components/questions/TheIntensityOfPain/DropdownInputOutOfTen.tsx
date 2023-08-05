@@ -21,7 +21,7 @@ const DropdownInputOutOfTen= ({selectedOption, parentQuestionPath}:{selectedOpti
                         <option value="9">9</option>
                         <option value="10">10</option>
                     </select>
-                    <label htmlFor={parentQuestionPath}> {selectedOption} </label>
+                    <label htmlFor={parentQuestionPath}> out of 10 </label>
                 </div>
 
             </div> 
