@@ -18,7 +18,6 @@ const WhatIsTheNatureOfPainNewOptionChronic = ({selectedOption, parentQuestionPa
                     <h3 className="mt-3 mb-3"> How long have been experiencing low back pain? </h3>
                     <HowLongFor selectedOption="Years" parentQuestionPath={currentQuestionPath} isOptionSelected={isOptionSelected}/>
                     
-
                 </div>
             }
         </div>

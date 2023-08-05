@@ -6,6 +6,7 @@ import AnyRedFlags from "./questions/AnyRedFlags/AnyRedFlags";
 import AreThereAnyNeurologicalSignsAssociated from "./questions/AreThereAnyNeurologicalSignsAssociated/AreThereAnyNeurologicalSignsAssociated";
 import EasingFactors from "./questions/EasingFactors/EasingFactors";
 import PastMedicalHistory from "./questions/PastMedicalHistory/PastMedicalHistory";
+import TheIntensityOfPain from "./questions/TheIntensityOfPain/TheIntensityOfPain";
 import WhatIsTheNatureOfPainNew from "./questions/WhatIsTheNatureOfPain/WhatIsTheNatureOfPainNew";
 import WhenIsThePainWorse from "./questions/WhenIsThePainWorse/WhenIsThePainWorse";
 
@@ -58,6 +59,8 @@ const Form = ({handleChange, handleClick,  resultsToDisplay}:formProps) => {
                 >
 
                 <WhatIsTheNatureOfPainNew  parentQuestionPath={"What is the nature of pain?"} isOptionSelected={isOptionSelected}  />
+
+                <TheIntensityOfPain parentQuestionPath={"What is the intensity of the pain?"} isOptionSelected={isOptionSelected} />
 
                 {/* <WhatIsTheNatureOfPain parentQuestionPath={"What is the nature of pain?"} isOptionSelected={isOptionSelected} /> */}
 
