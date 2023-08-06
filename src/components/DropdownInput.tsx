@@ -16,6 +16,12 @@ const DropdownInput= ({selectedOption, parentQuestionPath, isOptionSelected}:{se
                         <option value="4">4</option>
                         <option value="5">5</option>
                         <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
                     </select>
                     <label htmlFor={parentQuestionPath}> {selectedOption} </label>
                 </div>
@@ -52,6 +58,42 @@ const DropdownInput= ({selectedOption, parentQuestionPath, isOptionSelected}:{se
             }
             { 
                 isOptionSelected("6",parentQuestionPath) &&
+                <div className="ml-10">
+                    <WasThereAnIncident isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"6"} />
+                </div>   
+            }
+            { 
+                isOptionSelected("7",parentQuestionPath) &&
+                <div className="ml-10">
+                    <WasThereAnIncident isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"1"} />
+                </div>   
+            }
+            { 
+                isOptionSelected("8",parentQuestionPath) &&
+                <div className="ml-10">
+                    <WasThereAnIncident isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"2"} />
+                </div>   
+            }
+            { 
+                isOptionSelected("9",parentQuestionPath) &&
+                <div className="ml-10">
+                    <WasThereAnIncident isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"3"} />
+                </div>   
+            }
+            { 
+                isOptionSelected("10",parentQuestionPath) &&
+                <div className="ml-10">
+                    <WasThereAnIncident isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"4"} />
+                </div>   
+            }
+            { 
+                isOptionSelected("11",parentQuestionPath) &&
+                <div className="ml-10">
+                    <WasThereAnIncident isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"5"} />
+                </div>   
+            }
+            { 
+                isOptionSelected("12",parentQuestionPath) &&
                 <div className="ml-10">
                     <WasThereAnIncident isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"6"} />
                 </div>   
