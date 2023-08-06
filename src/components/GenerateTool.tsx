@@ -99,7 +99,7 @@ export default function GenerateTool() {
       console.log("DROPDOWN TRIGGERED ",target.value );
     }
 
-    if (target.type === 'radio'||target.type === "select-one") {
+    if (target.type === 'radio'||target.type === "select-one"||target.type === "textarea") {
       console.log("radio fired");
       const newObject = {...resultsToDisplay};
 

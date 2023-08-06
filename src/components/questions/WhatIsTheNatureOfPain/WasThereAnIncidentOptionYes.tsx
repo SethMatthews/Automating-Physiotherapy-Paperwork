@@ -3,6 +3,7 @@
 
 import RadioInputOption from "~/components/RadioInput";
 import IncidentTypeOption from "./IncidentTypeOption";
+import TextArea from "../TextArea";
 
 type isOptionSelectedType = (option: string, questionNameToCheck: string) => boolean;
 
@@ -20,7 +21,8 @@ const WasThereAnIncidentOptionYes = ({selectedOption, parentQuestionPath, isOpti
                     <IncidentTypeOption selectedOption="Moving around in bed" parentQuestionPath={currentQuestionPath} />
                     <IncidentTypeOption selectedOption="Gym work" parentQuestionPath={currentQuestionPath} />
                     <IncidentTypeOption selectedOption="Sport" parentQuestionPath={currentQuestionPath} />
-                    <IncidentTypeOption selectedOption="Other – please specify" parentQuestionPath={currentQuestionPath} />
+                    {/* <IncidentTypeOption selectedOption="Other – please specify" parentQuestionPath={currentQuestionPath} /> */}
+                    <TextArea text="Other – please specify" value={currentQuestionPath} questionName={currentQuestionPath} />
 
                 </div>
             }
