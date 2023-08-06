@@ -12,7 +12,7 @@ const AreThereAnyNeurologicalSignsAssociated = ({parentQuestionPath, isOptionSel
     
     return (  
         <div>
-            <h3 className="mt-3 mb-3">{parentQuestionPath}</h3>
+            <h3 className="mt-9 text-lg font-semibold mb-3">{parentQuestionPath}</h3>
 
             <NeurologicalSignsAssociatedOptionNo selectedOption="No" parentQuestionPath={parentQuestionPath}  />
             <NeurologicalSignsAssociatedOptionYes selectedOption="Yes" parentQuestionPath={parentQuestionPath}  isOptionSelected={isOptionSelected} />

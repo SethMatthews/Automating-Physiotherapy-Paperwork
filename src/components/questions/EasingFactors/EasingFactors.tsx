@@ -12,7 +12,7 @@ const EasingFactors = ({parentQuestionPath, isCheckboxOptionSelected}:{parentQue
     
     return (  
         <div>
-            <h3 className="mt-3 mb-3">{parentQuestionPath}</h3>
+            <h3 className="mt-9 text-lg font-semibold mb-3">{parentQuestionPath}</h3>
 
             <AggravatingFactorsOptions selectedOption="Heat" parentQuestionPath={parentQuestionPath}  />
             <AggravatingFactorsOptions selectedOption="Rest" parentQuestionPath={parentQuestionPath}  />

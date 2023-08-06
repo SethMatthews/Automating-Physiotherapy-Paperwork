@@ -6,7 +6,7 @@ const TheIntensityOfPain = ({parentQuestionPath, isOptionSelected}:{parentQuesti
     
     return (  
         <div>
-            <h3 className="mt-3 mb-3">{parentQuestionPath}</h3>
+            <h3 className="mt-9 text-lg font-semibold mb-3">{parentQuestionPath}</h3>
             <TheIntensityOfPainOption selectedOption="Rest" parentQuestionPath={parentQuestionPath} isOptionSelected={isOptionSelected}  />
             <TheIntensityOfPainOption selectedOption="Aggravating factors can peak pain to" parentQuestionPath={parentQuestionPath} isOptionSelected={isOptionSelected}  />
         </div>

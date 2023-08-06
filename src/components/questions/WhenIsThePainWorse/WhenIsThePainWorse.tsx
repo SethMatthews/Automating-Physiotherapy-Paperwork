@@ -9,7 +9,7 @@ const WhenIsThePainWorse = ({parentQuestionPath, isCheckboxOptionSelected}:{pare
     
     return (  
         <div>
-            <h3 className="mt-3 mb-3">{parentQuestionPath}</h3>
+            <h3 className="mt-9 text-lg font-semibold mb-3">{parentQuestionPath}</h3>
             <PainWorseOptionMorning selectedOption="Mornings" parentQuestionPath={parentQuestionPath} isCheckboxOptionSelected={isCheckboxOptionSelected}   />
             <NeurologicalSignsAssociatedOptionNo selectedOption="Throughout the day" parentQuestionPath={parentQuestionPath}  />
             <PainWorseOptionNight  selectedOption="Night time" parentQuestionPath={parentQuestionPath} isCheckboxOptionSelected={isCheckboxOptionSelected} />

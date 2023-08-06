@@ -10,7 +10,7 @@ const WhatIsTheNatureOfPainNew = ({parentQuestionPath, isOptionSelected}:{parent
     
     return (  
         <div>
-            <h3 className="mt-3 mb-3">{parentQuestionPath}</h3>
+            <h3 className="mt-9 text-lg font-semibold  mb-3">{parentQuestionPath}</h3>
             <WhatIsTheNatureOfPainNewOption selectedOption="Acute" parentQuestionPath={parentQuestionPath} isOptionSelected={isOptionSelected}  />
             <WhatIsTheNatureOfPainNewOptionChronic selectedOption="Chronic" parentQuestionPath={parentQuestionPath} isOptionSelected={isOptionSelected}  />
             <WhatIsTheNatureOfPainNewOptionAcutOnChronic selectedOption="Acute on chronic" parentQuestionPath={parentQuestionPath} isOptionSelected={isOptionSelected}  />

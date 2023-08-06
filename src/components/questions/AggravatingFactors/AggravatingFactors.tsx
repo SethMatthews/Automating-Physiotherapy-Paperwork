@@ -9,7 +9,7 @@ const AggravatingFactors = ({parentQuestionPath, isCheckboxOptionSelected}:{pare
     
     return (  
         <div>
-            <h3 className="mt-3 mb-3">{parentQuestionPath}</h3>
+            <h3 className="mt-9 text-lg font-semibold mb-3">{parentQuestionPath}</h3>
 
             <AggravatingFactorsOptions selectedOption="Bending forward" parentQuestionPath={parentQuestionPath}  />
             <AggravatingFactorsOptions selectedOption="Bending backwards" parentQuestionPath={parentQuestionPath}  />

@@ -9,7 +9,7 @@ const AnyRedFlags = ({parentQuestionPath, isCheckboxOptionSelected}:{parentQuest
     
     return (  
         <div>
-            <h3 className="mt-3 mb-3">{parentQuestionPath}</h3>
+            <h3 className="mt-9 text-lg font-semibold mb-3">{parentQuestionPath}</h3>
             <RedFlagOptionNo selectedOption="No" parentQuestionPath={parentQuestionPath}  />
             <RedFlagOptionYes selectedOption="Yes" parentQuestionPath={parentQuestionPath} isCheckboxOptionSelected={isCheckboxOptionSelected}   />
 

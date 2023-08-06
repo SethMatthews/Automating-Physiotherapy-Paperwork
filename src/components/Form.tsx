@@ -58,6 +58,8 @@ const Form = ({handleChange, handleClick,  resultsToDisplay}:formProps) => {
                 
                 >
 
+                {/* <h1 className="text-2xl">Subjective:</h1> */}
+
                 <WhatIsTheNatureOfPainNew  parentQuestionPath={"What is the nature of pain?"} isOptionSelected={isOptionSelected}  />
 
                 <TheIntensityOfPain parentQuestionPath={"What is the intensity of the pain?"} isOptionSelected={isOptionSelected} />
