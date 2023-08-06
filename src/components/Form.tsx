@@ -70,7 +70,7 @@ const Form = ({handleChange, handleClick,  resultsToDisplay}:formProps) => {
 
                 <AreThereAnyNeurologicalSignsAssociated  parentQuestionPath={"Are there any neurological signs associated?"} isOptionSelected={isOptionSelected}  />
 
-                <AggravatingFactors parentQuestionPath="Aggravating factors?" isCheckboxOptionSelected={isCheckboxOptionSelected} />
+                <AggravatingFactors parentQuestionPath="Aggravating factors?" isOptionSelected={isOptionSelected} />
 
                 <EasingFactors parentQuestionPath="Easing factors?"  isCheckboxOptionSelected={isCheckboxOptionSelected} />
 
