@@ -1,14 +1,14 @@
-2023-08-06T00:57:57.800Z   +420ms [debug] Config loaded {"version":"2.18.2","cdkVersion":"2.84.0","constructsVersion":"10.1.156","config":{"name":"first-t3","region":"us-east-1","stage":"dev","ssmPrefix":"/sst/first-t3/dev/"},"metafile":{"inputs":{"sst.config.ts":{"bytes":212,"imports":[{"path":"sst","kind":"import-statement","external":true},{"path":"sst/constructs","kind":"import-statement","external":true}]}},"outputs":{".sst.config.1691283477726.mjs":{"imports":[],"exports":["default"],"entryPoint":"sst.config.ts","inputs":{"sst.config.ts":{"bytesInOutput":123}},"bytes":305}}},"paths":{"config":"/Users/sethmatthews/Documents/github-repos/t3-stack-first/first-t3/sst.config.ts","root":"/Users/sethmatthews/Documents/github-repos/t3-stack-first/first-t3","out":"/Users/sethmatthews/Documents/github-repos/t3-stack-first/first-t3/.sst","artifacts":"/Users/sethmatthews/Documents/github-repos/t3-stack-first/first-t3/.sst/artifacts"}}
-2023-08-06T00:57:58.959Z  +1159ms [debug] Using AWS profile 
-2023-08-06T00:57:58.985Z    +26ms [debug] Created AWS client IoTClient
-2023-08-06T00:57:58.985Z     +0ms [debug] Getting IoT endpoint
-2023-08-06T00:57:59.793Z   +808ms [debug] Using IoT endpoint: a3lq4g5xb5ab4j-ats.iot.us-east-1.amazonaws.com
-2023-08-06T00:57:59.793Z     +0ms [debug] Initializing bootstrap context
-2023-08-06T00:57:59.793Z     +0ms [debug] Created AWS client CloudFormationClient
-2023-08-06T00:58:01.074Z  +1281ms [debug] Loaded bootstrap status
-2023-08-06T00:58:01.074Z     +0ms [debug] Bootstrap context initialized {"version":"7.2","bucket":"sstbootstrap-useast124d14e4b-1cmm8wfzxx22u"}
-2023-08-06T00:58:01.075Z     +1ms [debug] Created AWS client S3Client
-2023-08-06T00:58:01.104Z    +29ms [debug] Fetching all metadata
-2023-08-06T00:58:02.415Z  +1311ms [debug] IoT connected
-2023-08-06T00:58:02.418Z     +3ms [debug] Fetched metadata from 0 stacks
-2023-08-06T00:58:02.419Z     +1ms [debug] Created AWS client SSMClient
+2023-08-06T01:11:20.537Z   +418ms [debug] Config loaded {"version":"2.18.2","cdkVersion":"2.84.0","constructsVersion":"10.1.156","config":{"name":"first-t3","region":"us-east-1","stage":"dev","ssmPrefix":"/sst/first-t3/dev/"},"metafile":{"inputs":{"sst.config.ts":{"bytes":212,"imports":[{"path":"sst","kind":"import-statement","external":true},{"path":"sst/constructs","kind":"import-statement","external":true}]}},"outputs":{".sst.config.1691284280459.mjs":{"imports":[],"exports":["default"],"entryPoint":"sst.config.ts","inputs":{"sst.config.ts":{"bytesInOutput":123}},"bytes":305}}},"paths":{"config":"/Users/sethmatthews/Documents/github-repos/t3-stack-first/first-t3/sst.config.ts","root":"/Users/sethmatthews/Documents/github-repos/t3-stack-first/first-t3","out":"/Users/sethmatthews/Documents/github-repos/t3-stack-first/first-t3/.sst","artifacts":"/Users/sethmatthews/Documents/github-repos/t3-stack-first/first-t3/.sst/artifacts"}}
+2023-08-06T01:11:21.679Z  +1142ms [debug] Using AWS profile 
+2023-08-06T01:11:21.701Z    +22ms [debug] Created AWS client IoTClient
+2023-08-06T01:11:21.701Z     +0ms [debug] Getting IoT endpoint
+2023-08-06T01:11:22.487Z   +786ms [debug] Using IoT endpoint: a3lq4g5xb5ab4j-ats.iot.us-east-1.amazonaws.com
+2023-08-06T01:11:22.487Z     +0ms [debug] Initializing bootstrap context
+2023-08-06T01:11:22.488Z     +1ms [debug] Created AWS client CloudFormationClient
+2023-08-06T01:11:23.544Z  +1056ms [debug] Loaded bootstrap status
+2023-08-06T01:11:23.545Z     +1ms [debug] Bootstrap context initialized {"version":"7.2","bucket":"sstbootstrap-useast124d14e4b-1cmm8wfzxx22u"}
+2023-08-06T01:11:23.546Z     +1ms [debug] Created AWS client S3Client
+2023-08-06T01:11:23.583Z    +37ms [debug] Fetching all metadata
+2023-08-06T01:11:24.662Z  +1079ms [debug] Fetched metadata from 0 stacks
+2023-08-06T01:11:24.664Z     +2ms [debug] Created AWS client SSMClient
+2023-08-06T01:11:24.828Z   +164ms [debug] IoT connected

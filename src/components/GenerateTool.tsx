@@ -180,6 +180,21 @@ export default function GenerateTool() {
         }
     }
 
+    const textAreaElements = document.querySelectorAll("textarea");
+    for (const textAreaElement of textAreaElements ){
+        if(textAreaElement.value!==""){
+          textAreaElement?.parentElement?.classList.add("bg-blue-800");
+          textAreaElement?.parentElement?.classList.add("text-white");
+          textAreaElement?.classList.add("text-gray-500");
+          
+        }else{
+          textAreaElement?.parentElement?.classList.remove("bg-blue-800");
+          textAreaElement?.parentElement?.classList.remove("text-white");
+          textAreaElement?.classList.remove("text-gray-500");
+            
+        }
+    }
+
     console.log("resultsToDisplay is ",resultsToDisplay);
   }
   return (
