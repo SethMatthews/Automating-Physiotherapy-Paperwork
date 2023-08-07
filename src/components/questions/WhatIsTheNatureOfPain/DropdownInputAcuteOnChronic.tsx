@@ -1,8 +1,10 @@
-import WasThereAnIncident from "./questions/WhatIsTheNatureOfPain/WasThereAnIncident";
+// DropdownInputAcuteOnChronic
+
+import HowLongFlaredUp from "./HowLongFlaredUp";
 
 type isOptionSelectedType = (option: string, questionNameToCheck: string) => boolean;
 
-const DropdownInput= ({selectedOption, parentQuestionPath, isOptionSelected}:{selectedOption:string , parentQuestionPath: string, isOptionSelected:isOptionSelectedType }) => {
+const DropdownInputAcuteOnChronic= ({selectedOption, parentQuestionPath, isOptionSelected}:{selectedOption:string , parentQuestionPath: string, isOptionSelected:isOptionSelectedType }) => {
 
     // const currentQuestionPath = questionName+"-"+selectedOption;
 
@@ -29,73 +31,73 @@ const DropdownInput= ({selectedOption, parentQuestionPath, isOptionSelected}:{se
             { 
                 isOptionSelected("1",parentQuestionPath) &&
                 <div className="ml-10">
-                    <WasThereAnIncident isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"1"} />
+                    <HowLongFlaredUp isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"1"} />
                 </div>   
             }
             { 
                 isOptionSelected("2",parentQuestionPath) &&
                 <div className="ml-10">
-                    <WasThereAnIncident isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"2"} />
+                    <HowLongFlaredUp isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"2"} />
                 </div>   
             }
             { 
                 isOptionSelected("3",parentQuestionPath) &&
                 <div className="ml-10">
-                    <WasThereAnIncident isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"3"} />
+                    <HowLongFlaredUp isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"3"} />
                 </div>   
             }
             { 
                 isOptionSelected("4",parentQuestionPath) &&
                 <div className="ml-10">
-                    <WasThereAnIncident isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"4"} />
+                    <HowLongFlaredUp isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"4"} />
                 </div>   
             }
             { 
                 isOptionSelected("5",parentQuestionPath) &&
                 <div className="ml-10">
-                    <WasThereAnIncident isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"5"} />
+                    <HowLongFlaredUp isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"5"} />
                 </div>   
             }
             { 
                 isOptionSelected("6",parentQuestionPath) &&
                 <div className="ml-10">
-                    <WasThereAnIncident isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"6"} />
+                    <HowLongFlaredUp isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"6"} />
                 </div>   
             }
             { 
                 isOptionSelected("7",parentQuestionPath) &&
                 <div className="ml-10">
-                    <WasThereAnIncident isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"7"} />
+                    <HowLongFlaredUp isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"7"} />
                 </div>   
             }
             { 
                 isOptionSelected("8",parentQuestionPath) &&
                 <div className="ml-10">
-                    <WasThereAnIncident isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"8"} />
+                    <HowLongFlaredUp isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"8"} />
                 </div>   
             }
             { 
                 isOptionSelected("9",parentQuestionPath) &&
                 <div className="ml-10">
-                    <WasThereAnIncident isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"9"} />
+                    <HowLongFlaredUp isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"9"} />
                 </div>   
             }
             { 
                 isOptionSelected("10",parentQuestionPath) &&
                 <div className="ml-10">
-                    <WasThereAnIncident isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"10"} />
+                    <HowLongFlaredUp isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"10"} />
                 </div>   
             }
             { 
                 isOptionSelected("11",parentQuestionPath) &&
                 <div className="ml-10">
-                    <WasThereAnIncident isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"11"} />
+                    <HowLongFlaredUp isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"11"} />
                 </div>   
             }
             { 
                 isOptionSelected("12",parentQuestionPath) &&
                 <div className="ml-10">
-                    <WasThereAnIncident isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"12"} />
+                    <HowLongFlaredUp isOptionSelected={isOptionSelected} parentQuestionPath={parentQuestionPath+"-"+"12"} />
                 </div>   
             }
 
@@ -104,4 +106,4 @@ const DropdownInput= ({selectedOption, parentQuestionPath, isOptionSelected}:{se
     );
 }
  
-export default DropdownInput;
+export default DropdownInputAcuteOnChronic;
