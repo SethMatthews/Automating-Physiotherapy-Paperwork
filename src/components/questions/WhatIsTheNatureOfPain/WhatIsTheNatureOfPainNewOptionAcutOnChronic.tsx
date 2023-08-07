@@ -18,9 +18,8 @@ const WhatIsTheNatureOfPainNewOptionAcutOnChronic = ({selectedOption, parentQues
             {isOptionSelected(selectedOption,parentQuestionPath) && 
                 <div className="ml-10">
                     <h3 className="mt-3 mb-3"> How long have been experiencing ongoing low back pain? </h3>
-                    <HowLongForAcuuteOnChronic selectedOption="Days" parentQuestionPath={currentQuestionPath} isOptionSelected={isOptionSelected}/>
-                    <HowLongForAcuuteOnChronic selectedOption="Weeks" parentQuestionPath={currentQuestionPath} isOptionSelected={isOptionSelected}/>
                     <HowLongForAcuuteOnChronic selectedOption="Months" parentQuestionPath={currentQuestionPath} isOptionSelected={isOptionSelected}/>
+                    <HowLongForAcuuteOnChronic selectedOption="Years" parentQuestionPath={currentQuestionPath} isOptionSelected={isOptionSelected}/>
 
                 </div>
             }
