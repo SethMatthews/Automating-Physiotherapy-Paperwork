@@ -1,7 +1,7 @@
 // TheIntensityOfPain
 
-import RadioInputOption from "~/components/RadioInput";
 import DropdownInputOutOfTen from "./DropdownInputOutOfTen";
+import CheckboxInput from "~/components/CheckboxInput";
 
 type isOptionSelectedType = (option: string, questionNameToCheck: string) => boolean;
 
@@ -10,7 +10,7 @@ const TheIntensityOfPainOption = ({selectedOption, parentQuestionPath, isOptionS
     const currentQuestionPath = parentQuestionPath+"-"+selectedOption;
     return (  
         <div>
-            <RadioInputOption text={selectedOption} value={selectedOption} questionName={parentQuestionPath}/>
+            <CheckboxInput text={selectedOption} value={selectedOption} questionName={parentQuestionPath}/>
             {isOptionSelected(selectedOption,parentQuestionPath) && 
                 <div className="ml-10">
                     <h3 className="mt-3 mb-3">VAS pain scale out of 10?</h3>
