@@ -18,7 +18,7 @@ const WhatIsTheNatureOfPainNewOptionChronic = ({selectedOption, parentQuestionPa
             {isOptionSelected(selectedOption,parentQuestionPath) && 
                 <div className="ml-10">
                     <h3 className="mt-3 mb-3"> How many years have been experiencing low back pain? </h3>
-                    <ChronicDropdown selectedOption={selectedOption} parentQuestionPath={currentQuestionPath}/>
+                    <ChronicDropdown parentQuestionPath={currentQuestionPath}/>
                     {/* <HowLongFor selectedOption="Years" parentQuestionPath={currentQuestionPath} isOptionSelected={isOptionSelected}/> */}
                     
                 </div>
