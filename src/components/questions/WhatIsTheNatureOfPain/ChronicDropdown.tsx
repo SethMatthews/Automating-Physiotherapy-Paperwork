@@ -1,5 +1,5 @@
 
-const ChronicDropdown= ({selectedOption, parentQuestionPath}:{selectedOption:string , parentQuestionPath: string}) => {
+const ChronicDropdown= ({parentQuestionPath}:{parentQuestionPath: string}) => {
 
     // const currentQuestionPath = questionName+"-"+selectedOption;
 
