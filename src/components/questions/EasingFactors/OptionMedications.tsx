@@ -2,6 +2,7 @@
 
 import CheckboxInput from "~/components/CheckboxInput";
 import OptionMedicationsAntiInflam from "./OptionMedicationsAntiInflam";
+import OptionMedicationsPainRelief from "./OptionMedicationsPainRelief";
 
 
 type isOptionSelectedType = (option: string, questionNameToCheck: string) => boolean;
@@ -15,7 +16,7 @@ const OptionMedications = ({selectedOption, parentQuestionPath, isCheckboxOption
             {isCheckboxOptionSelected(selectedOption,parentQuestionPath) && 
                 <div className="ml-10">
                     <OptionMedicationsAntiInflam selectedOption="Anti-inflammatories" parentQuestionPath={currentQuestionPath} isCheckboxOptionSelected={isCheckboxOptionSelected}/>
-                    <CheckboxInput text="Pain relief " value="Pain relief " questionName={currentQuestionPath}/>
+                    <OptionMedicationsPainRelief selectedOption="Pain Relief" parentQuestionPath={currentQuestionPath} isCheckboxOptionSelected={isCheckboxOptionSelected}/>
                     <CheckboxInput text="Muscle relaxants" value="Muscle relaxants" questionName={currentQuestionPath}/>            
                 </div>
             }
