@@ -30,15 +30,15 @@ const OutputWhatIsTheNatureOfPain = ({isOptionSelected, resultsToDisplay }:formP
     
     let lowBackPainType = "LOWBACKBACINTYPE";
     if(resultsToDisplay.hasOwnProperty("What is the nature of pain?")){
-        lowBackPainType = resultsToDisplay["What is the nature of pain?"].toString();
+        lowBackPainType = resultsToDisplay["What is the nature of pain?"]!.toString();
     }
-    let periodType= "DAYS/WEEKS/MONTHS?YEARS";
+    let periodType = "DAYS/WEEKS/MONTHS?YEARS";
     if(resultsToDisplay.hasOwnProperty("What is the nature of pain?"+"-"+lowBackPainType)){
-        periodType = resultsToDisplay["What is the nature of pain?"+"-"+lowBackPainType]?.toString();
+        periodType = resultsToDisplay["What is the nature of pain?"+"-"+lowBackPainType]!.toString();
     }
-    let numberOf: string|undefined = "NUMBEROF";
+    let numberOf = "NUMBEROF";
     if(resultsToDisplay.hasOwnProperty("What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType)){
-        numberOf = resultsToDisplay["What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType]?.toString();
+        numberOf = resultsToDisplay["What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType]!.toString();
     }
 
     return (  
