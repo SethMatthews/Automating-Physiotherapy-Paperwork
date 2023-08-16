@@ -2,12 +2,29 @@ import { useState } from 'react';
 import Form from './Form';
 
 import Image from 'next/image'
+import OutputsParent from './outputs/OutputsParent';
 
 
 
 export default function GenerateTool() {
 
   const [resultsToDisplay,setResultsToDisplay] = useState<{[questionName: string]: string[]}>({});
+
+  const isOptionSelected = ( option: string, questionNameToCheck:string) => {
+    const questionValue: string[]|undefined = resultsToDisplay[questionNameToCheck];
+    if (questionValue===undefined){
+        return false
+
+    } else if (questionValue.length>1){
+        const questionValues: string[] = resultsToDisplay[questionNameToCheck] as string[];
+        return questionValues?.includes(option);
+
+    } else {
+        console.log("questionValue[0] ",questionValue[0]);
+        console.log("option ",option);
+        return questionValue[0]===option;
+    }
+  }
 
 
   const isQuestionInObject = (questionName: string, resultsToDisplay:{[questionName: string]: string[]}):boolean=> {
@@ -154,6 +171,7 @@ export default function GenerateTool() {
           setResultsToDisplay({...newObject});
         }
     }
+    
     const inputElements = document.querySelectorAll("input");
     for (const inputElement of inputElements ){
         if(inputElement.checked){
@@ -238,6 +256,12 @@ export default function GenerateTool() {
               <br/>
               Thank you for refering Seth to 4 Life Physiotherapy for opinion and management of lower bac pain. <br/>
               <br/>
+
+              <br />
+              <OutputsParent isOptionSelected={isOptionSelected} resultsToDisplay={resultsToDisplay}  />
+
+              <br />
+              <br />
 
               Subjective:
               <ul>
