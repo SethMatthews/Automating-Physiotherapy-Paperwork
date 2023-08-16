@@ -1,5 +1,7 @@
 // OutputWhatIsTheNatureOfPain
 
+import { error } from "console";
+
 
 
 type isOptionSelectedType = (option: string, questionNameToCheck: string) => boolean;
@@ -28,17 +30,20 @@ type formProps = {
 
 const OutputWhatIsTheNatureOfPain = ({isOptionSelected, resultsToDisplay }:formProps) => {
     
-    let lowBackPainType = "LOWBACKBACINTYPE";
+    let lowBackPainType: string|undefined = "LOWBACKBACINTYPE";
     if(resultsToDisplay.hasOwnProperty("What is the nature of pain?")){
-        lowBackPainType = resultsToDisplay["What is the nature of pain?"]!.toString();
+        lowBackPainType = resultsToDisplay["What is the nature of pain?"]?.toString();
     }
-    let periodType = "DAYS/WEEKS/MONTHS?YEARS";
-    if(resultsToDisplay.hasOwnProperty("What is the nature of pain?"+"-"+lowBackPainType)){
-        periodType = resultsToDisplay["What is the nature of pain?"+"-"+lowBackPainType]!.toString();
+    let periodType: string|undefined  = "DAYS/WEEKS/MONTHS?YEARS";
+    if(lowBackPainType && resultsToDisplay.hasOwnProperty("What is the nature of pain?"+"-"+lowBackPainType)){
+        periodType = resultsToDisplay["What is the nature of pain?"+"-"+lowBackPainType]?.toString();
     }
-    let numberOf = "NUMBEROF";
-    if(resultsToDisplay.hasOwnProperty("What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType)){
-        numberOf = resultsToDisplay["What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType]!.toString();
+    let numberOf: string|undefined  = "NUMBEROF";
+    if(periodType && resultsToDisplay.hasOwnProperty("What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType)){
+        numberOf = resultsToDisplay["What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType]?.toString();
+    }
+    if (lowBackPainType===undefined || periodType===undefined || numberOf===undefined ){
+        throw new Error("lowBackPainType or periodType or numberOf is undefined ");
     }
 
     return (  
