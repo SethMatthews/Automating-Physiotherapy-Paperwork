@@ -51,7 +51,7 @@ const OutputWhatIsTheNatureOfPain = ({isOptionSelected, resultsToDisplay }:formP
      }
      if (lowBackPainType && periodType && numberOf  && resultsToDisplay["What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType+"-"+numberOf+"-Yes"]){
         incidentToCausePain = "The onset of pain was related to an activity the patient participated in, including: " ;
-        incidentToCausePain += resultsToDisplay["What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType+"-"+numberOf+"-Yes"]?.toString();
+        incidentToCausePain += resultsToDisplay["What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType+"-"+numberOf+"-Yes"]?.toString().toLowerCase();
 
      }
 
@@ -61,21 +61,26 @@ const OutputWhatIsTheNatureOfPain = ({isOptionSelected, resultsToDisplay }:formP
 
     return (  
         <div>
-        { 
-            resultsToDisplay.hasOwnProperty("What is the nature of pain?") && 
-            resultsToDisplay.hasOwnProperty("What is the nature of pain?"+"-"+lowBackPainType) && 
-            resultsToDisplay.hasOwnProperty("What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType) && 
-            <p>
-                The patient has been experiencing {lowBackPainType} low back pain for the last {numberOf} {periodType}.
-            </p>
-        }
+            <ul>
+            { 
+                resultsToDisplay.hasOwnProperty("What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType) && 
+                <div  className='list-disc'>
+                     <li>
+                        The patient has been experiencing {lowBackPainType.toLowerCase()} low back pain for the last {numberOf} {periodType.toLowerCase()}.
+                    </li>
+                </div>
+            }
 
-        {
-            resultsToDisplay.hasOwnProperty("What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType+"-"+numberOf) && 
-            <p>
-                {incidentToCausePain}
-            </p>
-        }
+            {
+                resultsToDisplay.hasOwnProperty("What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType+"-"+numberOf) && 
+                <div  className='list-disc'>
+                     <li>
+                     {incidentToCausePain}
+                    </li>
+                </div>
+            }
+            </ul>
+       
         </div>
     );
 }

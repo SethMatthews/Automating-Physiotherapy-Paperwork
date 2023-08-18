@@ -1,32 +1,14 @@
-2023-08-17T22:59:41.309Z   +520ms [debug] Config loaded {"version":"2.18.2","cdkVersion":"2.84.0","constructsVersion":"10.1.156","config":{"name":"first-t3","region":"us-east-1","stage":"dev","ssmPrefix":"/sst/first-t3/dev/"},"metafile":{"inputs":{"sst.config.ts":{"bytes":212,"imports":[{"path":"sst","kind":"import-statement","external":true},{"path":"sst/constructs","kind":"import-statement","external":true}]}},"outputs":{".sst.config.1692313181182.mjs":{"imports":[],"exports":["default"],"entryPoint":"sst.config.ts","inputs":{"sst.config.ts":{"bytesInOutput":123}},"bytes":305}}},"paths":{"config":"/Users/sethmatthews/Documents/github-repos/t3-stack-first/first-t3/sst.config.ts","root":"/Users/sethmatthews/Documents/github-repos/t3-stack-first/first-t3","out":"/Users/sethmatthews/Documents/github-repos/t3-stack-first/first-t3/.sst","artifacts":"/Users/sethmatthews/Documents/github-repos/t3-stack-first/first-t3/.sst/artifacts"}}
-2023-08-17T22:59:42.512Z  +1203ms [debug] Using AWS profile 
-2023-08-17T22:59:42.535Z    +23ms [debug] Created AWS client IoTClient
-2023-08-17T22:59:42.535Z     +0ms [debug] Getting IoT endpoint
-2023-08-17T22:59:44.241Z  +1706ms [debug] Using IoT endpoint: a3lq4g5xb5ab4j-ats.iot.us-east-1.amazonaws.com
-2023-08-17T22:59:44.241Z     +0ms [debug] Initializing bootstrap context
-2023-08-17T22:59:44.242Z     +1ms [debug] Created AWS client CloudFormationClient
-2023-08-17T22:59:45.570Z  +1328ms [debug] Loaded bootstrap status
-2023-08-17T22:59:45.570Z     +0ms [debug] Bootstrap context initialized {"version":"7.2","bucket":"sstbootstrap-useast124d14e4b-1cmm8wfzxx22u"}
-2023-08-17T22:59:45.571Z     +1ms [debug] Created AWS client S3Client
-2023-08-17T22:59:45.610Z    +39ms [debug] Fetching all metadata
-2023-08-17T22:59:46.855Z  +1245ms [debug] Fetched metadata from 0 stacks
-2023-08-17T22:59:46.857Z     +2ms [debug] Created AWS client SSMClient
-2023-08-17T22:59:47.144Z   +287ms [debug] IoT connected
-2023-08-17T23:36:14.335Z +2187191ms [debug] IoT closed
-2023-08-17T23:36:15.336Z  +1001ms [debug] IoT reconnected
-2023-08-17T23:36:15.357Z    +21ms [debug] IoT error {"errno":-3008,"code":"ENOTFOUND","syscall":"getaddrinfo","hostname":"a3lq4g5xb5ab4j-ats.iot.us-east-1.amazonaws.com","type":"error","target":{"_events":{},"_eventsCount":0,"readyState":3,"bytesReceived":0,"extensions":null,"protocol":"","_binaryType":"arraybuffer","_closeFrameReceived":false,"_closeFrameSent":false,"_closeMessage":"","_closeTimer":null,"_finalized":true,"_closeCode":1006,"_receiver":null,"_sender":null,"_socket":null,"_ultron":null,"protocolVersion":13,"_isServer":false,"url":"wss://a3lq4g5xb5ab4j-ats.iot.us-east-1.amazonaws.com/mqtt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAXUNF4ATVYGMNHVO7%2F20230817%2Fus-east-1%2Fiotdevicegateway%2Faws4_request&X-Amz-Date=20230817T233615Z&X-Amz-SignedHeaders=host&X-Amz-Signature=cdf6b829e901d5385a831e569aa1caffe45126f2ebc8ad01299959bd0cda54d8","_req":null}}
-2023-08-17T23:36:15.358Z     +1ms [debug] IoT closed
-2023-08-17T23:36:17.358Z  +2000ms [debug] IoT reconnected
-2023-08-17T23:36:17.367Z     +9ms [debug] IoT error {"errno":-3008,"code":"ENOTFOUND","syscall":"getaddrinfo","hostname":"a3lq4g5xb5ab4j-ats.iot.us-east-1.amazonaws.com","type":"error","target":{"_events":{},"_eventsCount":0,"readyState":3,"bytesReceived":0,"extensions":null,"protocol":"","_binaryType":"arraybuffer","_closeFrameReceived":false,"_closeFrameSent":false,"_closeMessage":"","_closeTimer":null,"_finalized":true,"_closeCode":1006,"_receiver":null,"_sender":null,"_socket":null,"_ultron":null,"protocolVersion":13,"_isServer":false,"url":"wss://a3lq4g5xb5ab4j-ats.iot.us-east-1.amazonaws.com/mqtt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAXUNF4ATVYGMNHVO7%2F20230817%2Fus-east-1%2Fiotdevicegateway%2Faws4_request&X-Amz-Date=20230817T233617Z&X-Amz-SignedHeaders=host&X-Amz-Signature=7f21391b76d93489de5be92e8b6ddd114ad46c4f59a7541e9aba449be8dbc913","_req":null}}
-2023-08-17T23:36:17.367Z     +0ms [debug] IoT closed
-2023-08-17T23:36:21.369Z  +4002ms [debug] IoT reconnected
-2023-08-17T23:36:21.380Z    +11ms [debug] IoT error {"errno":-3008,"code":"ENOTFOUND","syscall":"getaddrinfo","hostname":"a3lq4g5xb5ab4j-ats.iot.us-east-1.amazonaws.com","type":"error","target":{"_events":{},"_eventsCount":0,"readyState":3,"bytesReceived":0,"extensions":null,"protocol":"","_binaryType":"arraybuffer","_closeFrameReceived":false,"_closeFrameSent":false,"_closeMessage":"","_closeTimer":null,"_finalized":true,"_closeCode":1006,"_receiver":null,"_sender":null,"_socket":null,"_ultron":null,"protocolVersion":13,"_isServer":false,"url":"wss://a3lq4g5xb5ab4j-ats.iot.us-east-1.amazonaws.com/mqtt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAXUNF4ATVYGMNHVO7%2F20230817%2Fus-east-1%2Fiotdevicegateway%2Faws4_request&X-Amz-Date=20230817T233621Z&X-Amz-SignedHeaders=host&X-Amz-Signature=abecc53a63b6322556d4eb4555a2adc131431317348928629609e6e20ff5ffc9","_req":null}}
-2023-08-17T23:36:21.380Z     +0ms [debug] IoT closed
-2023-08-17T23:52:18.357Z +956977ms [debug] IoT reconnected
-2023-08-17T23:52:18.361Z     +4ms [debug] IoT error {"errno":-3008,"code":"ENOTFOUND","syscall":"getaddrinfo","hostname":"a3lq4g5xb5ab4j-ats.iot.us-east-1.amazonaws.com","type":"error","target":{"_events":{},"_eventsCount":0,"readyState":3,"bytesReceived":0,"extensions":null,"protocol":"","_binaryType":"arraybuffer","_closeFrameReceived":false,"_closeFrameSent":false,"_closeMessage":"","_closeTimer":null,"_finalized":true,"_closeCode":1006,"_receiver":null,"_sender":null,"_socket":null,"_ultron":null,"protocolVersion":13,"_isServer":false,"url":"wss://a3lq4g5xb5ab4j-ats.iot.us-east-1.amazonaws.com/mqtt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAXUNF4ATVYGMNHVO7%2F20230817%2Fus-east-1%2Fiotdevicegateway%2Faws4_request&X-Amz-Date=20230817T235218Z&X-Amz-SignedHeaders=host&X-Amz-Signature=8db902380b7f1f4a4e6adf5ddf53eff2aa14ad7f75567a868b52714d236c987a","_req":null}}
-2023-08-17T23:52:18.362Z     +1ms [debug] IoT closed
-2023-08-18T00:02:08.173Z +589811ms [debug] IoT reconnected
-2023-08-18T00:02:08.178Z     +5ms [debug] IoT error {"errno":-3008,"code":"ENOTFOUND","syscall":"getaddrinfo","hostname":"a3lq4g5xb5ab4j-ats.iot.us-east-1.amazonaws.com","type":"error","target":{"_events":{},"_eventsCount":0,"readyState":3,"bytesReceived":0,"extensions":null,"protocol":"","_binaryType":"arraybuffer","_closeFrameReceived":false,"_closeFrameSent":false,"_closeMessage":"","_closeTimer":null,"_finalized":true,"_closeCode":1006,"_receiver":null,"_sender":null,"_socket":null,"_ultron":null,"protocolVersion":13,"_isServer":false,"url":"wss://a3lq4g5xb5ab4j-ats.iot.us-east-1.amazonaws.com/mqtt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAXUNF4ATVYGMNHVO7%2F20230818%2Fus-east-1%2Fiotdevicegateway%2Faws4_request&X-Amz-Date=20230818T000208Z&X-Amz-SignedHeaders=host&X-Amz-Signature=0308bb1fff55a0b7fca0a0eda146f9de4bf9abbe59b4aa2a5209dced7f01052b","_req":null}}
-2023-08-18T00:02:08.178Z     +0ms [debug] IoT closed
-2023-08-18T00:14:45.235Z +757057ms [debug] IoT reconnected
-2023-08-18T00:14:48.048Z  +2813ms [debug] IoT connected
+2023-08-18T00:55:08.063Z   +379ms [debug] Config loaded {"version":"2.18.2","cdkVersion":"2.84.0","constructsVersion":"10.1.156","config":{"name":"first-t3","region":"us-east-1","stage":"dev","ssmPrefix":"/sst/first-t3/dev/"},"metafile":{"inputs":{"sst.config.ts":{"bytes":212,"imports":[{"path":"sst","kind":"import-statement","external":true},{"path":"sst/constructs","kind":"import-statement","external":true}]}},"outputs":{".sst.config.1692320108019.mjs":{"imports":[],"exports":["default"],"entryPoint":"sst.config.ts","inputs":{"sst.config.ts":{"bytesInOutput":123}},"bytes":305}}},"paths":{"config":"/Users/sethmatthews/Documents/github-repos/t3-stack-first/first-t3/sst.config.ts","root":"/Users/sethmatthews/Documents/github-repos/t3-stack-first/first-t3","out":"/Users/sethmatthews/Documents/github-repos/t3-stack-first/first-t3/.sst","artifacts":"/Users/sethmatthews/Documents/github-repos/t3-stack-first/first-t3/.sst/artifacts"}}
+2023-08-18T00:55:09.230Z  +1167ms [debug] Using AWS profile 
+2023-08-18T00:55:09.258Z    +28ms [debug] Created AWS client IoTClient
+2023-08-18T00:55:09.258Z     +0ms [debug] Getting IoT endpoint
+2023-08-18T00:55:10.178Z   +920ms [debug] Using IoT endpoint: a3lq4g5xb5ab4j-ats.iot.us-east-1.amazonaws.com
+2023-08-18T00:55:10.178Z     +0ms [debug] Initializing bootstrap context
+2023-08-18T00:55:10.179Z     +1ms [debug] Created AWS client CloudFormationClient
+2023-08-18T00:55:11.273Z  +1094ms [debug] Loaded bootstrap status
+2023-08-18T00:55:11.273Z     +0ms [debug] Bootstrap context initialized {"version":"7.2","bucket":"sstbootstrap-useast124d14e4b-1cmm8wfzxx22u"}
+2023-08-18T00:55:11.274Z     +1ms [debug] Created AWS client S3Client
+2023-08-18T00:55:11.316Z    +42ms [debug] Fetching all metadata
+2023-08-18T00:55:12.315Z   +999ms [debug] Fetched metadata from 0 stacks
+2023-08-18T00:55:12.317Z     +2ms [debug] Created AWS client SSMClient
+2023-08-18T00:55:12.666Z   +349ms [debug] IoT connected
