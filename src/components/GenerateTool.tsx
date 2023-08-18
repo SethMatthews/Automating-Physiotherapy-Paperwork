@@ -263,15 +263,18 @@ export default function GenerateTool() {
               <br />
               <br />
 
+              <div className='text-red-600'>
               Subjective:
-              <ul>
-                {resultsToDisplay&& Object.keys(resultsToDisplay).map((question, index)=>( // try javascript array foreach
-                  <div className='list-disc' key={index}>
-                  <li>{question} === {resultsToDisplay[question]} </li>
-                  </div>              
-                ))}
-              </ul>
+                <ul>
+                  {resultsToDisplay&& Object.keys(resultsToDisplay).map((question, index)=>( // try javascript array foreach
+                    <div className='list-disc' key={index}>
+                    <li>{question} === {resultsToDisplay[question]} </li>
+                    </div>              
+                  ))}
+                </ul>
+              </div>
 
+             
               <br/>
               <br/>
               Yours Sincerly, <br/>
