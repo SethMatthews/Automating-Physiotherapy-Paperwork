@@ -264,7 +264,7 @@ export default function GenerateTool() {
               <br />
 
               <div className='text-red-600'>
-              Subjective:
+              Subjective Storage Objectt for Development:
                 <ul>
                   {resultsToDisplay&& Object.keys(resultsToDisplay).map((question, index)=>( // try javascript array foreach
                     <div className='list-disc' key={index}>

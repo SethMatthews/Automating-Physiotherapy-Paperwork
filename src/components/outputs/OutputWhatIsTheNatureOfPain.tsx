@@ -44,15 +44,25 @@ const OutputWhatIsTheNatureOfPain = ({isOptionSelected, resultsToDisplay }:formP
     }
 
      // Was there an incident that caused the pain?
-     let incidentToCausePain = "incidentToCausePain" ;
+     let incidentToCausePain = undefined ;
+
+     let incidentToCausePainReason: string|undefined = "incidentToCausePainReason";
      
      if (lowBackPainType && periodType && numberOf && resultsToDisplay["What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType+"-"+numberOf]?.toString()==="No"){
         incidentToCausePain = "The onset of pain was insidious and doesn’t recall an incident that caused the flare up in pain."
      }
      if (lowBackPainType && periodType && numberOf  && resultsToDisplay["What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType+"-"+numberOf+"-Yes"]){
+        incidentToCausePainReason = resultsToDisplay["What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType+"-"+numberOf+"-Yes"]?.toString();
         incidentToCausePain = "The onset of pain was related to an activity the patient participated in, including: " ;
-        incidentToCausePain += resultsToDisplay["What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType+"-"+numberOf+"-Yes"]?.toString().toLowerCase();
-
+        if (incidentToCausePainReason && resultsToDisplay["What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType+"-"+numberOf+"-Yes"]){
+            if (resultsToDisplay["What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType+"-"+numberOf+"-Yes"]?.toString()==="Other"){
+                incidentToCausePain += resultsToDisplay["What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType+"-"+numberOf+"-Yes-Other"]?.toString().toLowerCase();
+            }else{
+                incidentToCausePain += resultsToDisplay["What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType+"-"+numberOf+"-Yes"]?.toString().toLowerCase();
+            }
+           
+        }
+        
      }
 
     if (lowBackPainType===undefined || periodType===undefined || numberOf===undefined ){
@@ -61,6 +71,7 @@ const OutputWhatIsTheNatureOfPain = ({isOptionSelected, resultsToDisplay }:formP
 
     return (  
         <div>
+            Subjective:
             <ul>
             { 
                 resultsToDisplay.hasOwnProperty("What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType) && 
@@ -70,7 +81,6 @@ const OutputWhatIsTheNatureOfPain = ({isOptionSelected, resultsToDisplay }:formP
                     </li>
                 </div>
             }
-
             {
                 resultsToDisplay.hasOwnProperty("What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType+"-"+numberOf) && 
                 <div  className='list-disc'>
