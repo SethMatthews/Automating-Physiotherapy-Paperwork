@@ -34,7 +34,7 @@ const OutputWhatIsTheNatureOfPain = ({isOptionSelected, resultsToDisplay }:formP
     if(resultsToDisplay.hasOwnProperty("What is the nature of pain?")){
         lowBackPainType = resultsToDisplay["What is the nature of pain?"]?.toString();
     }
-    let periodType: string|undefined  = "DAYS/WEEKS/MONTHS?YEARS";
+    let periodType: string|undefined  = "DAYS/WEEKS/MONTHS/YEARS";
     if(lowBackPainType && resultsToDisplay.hasOwnProperty("What is the nature of pain?"+"-"+lowBackPainType)){
         periodType = resultsToDisplay["What is the nature of pain?"+"-"+lowBackPainType]?.toString();
     }
@@ -47,7 +47,8 @@ const OutputWhatIsTheNatureOfPain = ({isOptionSelected, resultsToDisplay }:formP
      let incidentToCausePain = undefined ;
 
      let incidentToCausePainReason: string|undefined = "incidentToCausePainReason";
-     
+
+
      if (lowBackPainType && periodType && numberOf && resultsToDisplay["What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType+"-"+numberOf]?.toString()==="No"){
         incidentToCausePain = "The onset of pain was insidious and doesn’t recall an incident that caused the flare up in pain."
      }
@@ -60,10 +61,13 @@ const OutputWhatIsTheNatureOfPain = ({isOptionSelected, resultsToDisplay }:formP
             }else{
                 incidentToCausePain += resultsToDisplay["What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType+"-"+numberOf+"-Yes"]?.toString().toLowerCase();
             }
-           
-        }
-        
+        } 
      }
+
+
+     if ( lowBackPainType==="Chronic" && periodType){
+        incidentToCausePain = `The patient has been experiencing chronic low back pain for the last ${periodType} years.`
+     } 
 
     if (lowBackPainType===undefined || periodType===undefined || numberOf===undefined ){
         throw new Error("lowBackPainType or periodType or numberOf is undefined")
@@ -73,6 +77,14 @@ const OutputWhatIsTheNatureOfPain = ({isOptionSelected, resultsToDisplay }:formP
         <div>
             Subjective:
             <ul>
+            { 
+                resultsToDisplay.hasOwnProperty("What is the nature of pain?-Chronic") && 
+                <div  className='list-disc'>
+                     <li>
+                        {incidentToCausePain}
+                    </li>
+                </div>
+            }
             { 
                 resultsToDisplay.hasOwnProperty("What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType) && 
                 <div  className='list-disc'>
