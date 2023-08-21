@@ -119,6 +119,7 @@ const OutputWhatIsTheNatureOfPain = ({isOptionSelected, resultsToDisplay }:formP
                 </div>
             }
             { 
+                periodType && 
                 resultsToDisplay.hasOwnProperty("What is the nature of pain?-Chronic"+"-"+periodType) && 
                 <div  className='list-disc'>
                      <li>
@@ -127,6 +128,7 @@ const OutputWhatIsTheNatureOfPain = ({isOptionSelected, resultsToDisplay }:formP
                 </div>
             }
             {
+                periodType && numberOf && 
                 resultsToDisplay.hasOwnProperty("What is the nature of pain?-Chronic-"+periodType+"-"+numberOf) && 
                 <div  className='list-disc'>
                      <li>
@@ -135,6 +137,7 @@ const OutputWhatIsTheNatureOfPain = ({isOptionSelected, resultsToDisplay }:formP
                 </div>
             }
             {
+                periodType && numberOf &&  
                 resultsToDisplay.hasOwnProperty("What is the nature of pain?-Acute on chronic-"+periodType+"-"+numberOf) && 
                 <div  className='list-disc'>
                      <li>
