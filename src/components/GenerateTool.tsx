@@ -258,7 +258,16 @@ export default function GenerateTool() {
               <br/>
 
               <br />
+              Subjective:
               <OutputsParent isOptionSelected={isOptionSelected} resultsToDisplay={resultsToDisplay}  />
+              <br />
+              <br />
+
+              Yours Sincerly, <br/>
+              <br/>
+              Haydn Matthews <br/>
+              Physiotherapist <br/>
+              <br/>
 
               <br />
               <br />
@@ -277,11 +286,7 @@ export default function GenerateTool() {
              
               <br/>
               <br/>
-              Yours Sincerly, <br/>
-              <br/>
-              Haydn Matthews <br/>
-              Physiotherapist <br/>
-              <br/>
+
             </div>
 
         </div>

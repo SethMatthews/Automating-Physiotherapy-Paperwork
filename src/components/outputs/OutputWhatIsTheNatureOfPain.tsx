@@ -43,6 +43,9 @@ const OutputWhatIsTheNatureOfPain = ({isOptionSelected, resultsToDisplay }:formP
         numberOf = resultsToDisplay["What is the nature of pain?"+"-"+lowBackPainType+"-"+periodType]?.toString();
     }
 
+    
+
+
      // Was there an incident that caused the pain?
      let incidentToCausePain = undefined ;
 
@@ -100,15 +103,25 @@ const OutputWhatIsTheNatureOfPain = ({isOptionSelected, resultsToDisplay }:formP
         incidentToCausePain = `The patient has been experiencing chronic low back pain for the last ${periodType} years.`
      } 
 
-     if ( lowBackPainType==="Acute on chronic" && periodType && numberOf){
-        incidentToCausePain = `The patient has been experiencing acute on chronic low back pain, which  has been ongoing for last ${numberOf}  ${periodType}, but recently flared up 2 weeks ago .`
-     } 
+
+    let flaredUpPeriodType: string|undefined  = "DAYS/WEEKS/MONTHS/YEARS";
+    if(lowBackPainType && periodType && numberOf && resultsToDisplay.hasOwnProperty("What is the nature of pain?-Acute on chronic-"+periodType+"-"+numberOf)){
+        flaredUpPeriodType = resultsToDisplay["What is the nature of pain?-Acute on chronic-"+periodType+"-"+numberOf]?.toString();
+    }
+    let flaredUpNumberOf: string|undefined  = "NUMBEROF";
+    if(periodType && numberOf && flaredUpPeriodType &&  resultsToDisplay.hasOwnProperty("What is the nature of pain?-Acute on chronic-"+periodType+"-"+numberOf+"-"+flaredUpPeriodType)){
+        flaredUpNumberOf = resultsToDisplay["What is the nature of pain?-Acute on chronic-"+periodType+"-"+numberOf+"-"+flaredUpPeriodType]?.toString();
+    }
+    
+    if ( lowBackPainType==="Acute on chronic" && periodType && numberOf && flaredUpNumberOf && flaredUpPeriodType ){
+        incidentToCausePain = `The patient has been experiencing acute on chronic low back pain, which  has been ongoing for last ${numberOf}  ${periodType}, but recently flared up  ${flaredUpNumberOf}  ${flaredUpPeriodType} ago .`
+        //"What is the nature of pain?-Acute on chronic-"+periodType+"-"+numberOf
+    } 
 
 
 
     return (  
         <div>
-            Subjective:
             <ul>
             { 
                 resultsToDisplay.hasOwnProperty("What is the nature of pain?-Chronic") && 
